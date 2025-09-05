@@ -1,0 +1,24 @@
+{
+    "appId": "com.akash.electron-tutorial",
+    "files": [
+        "dist-react/**/*",
+        "dist-electron/main.js"
+    ],
+    "extraResources": [
+        "src/electron/preload.cjs"
+    ],
+    "icon": "./desktopIcon.png",
+    "mac": {
+        "target": "dmg"
+    },
+    "linux": {
+        "target": "AppImage",
+        "category": "Utility"
+    },
+    "win": {
+        "target": [
+            "portable",
+            "msi"
+        ]
+    }
+}
