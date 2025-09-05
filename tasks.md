@@ -10,7 +10,7 @@ This document outlines the roadmap and a comprehensive checklist of tasks for bu
 - [x] Configure development environment (ESM support, TypeScript/JavaScript setup)
 - [x] Set up `electron-builder` or packaging system
 - [x] Implement hot reload for development
-- [ ] Setup environment variables for APIs and config
+- [x] Setup environment variables for APIs and config
 - [x] Create `preload.js` (contextBridge) for secure communication
 - [x] Linting & formatting (ESLint, Prettier)
 
