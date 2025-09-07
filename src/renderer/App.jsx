@@ -1,9 +1,7 @@
 import { Routes, Route } from "react-router";
-import Home from "./pages/Home";
-import Settings from './pages/Settings'
-
+import Home from "./pages/Home/Home";
+import Settings from './pages/Settings/Settings'
 function App() {
-
   return (
     <Routes>
       <Route path="/" element={<Home />} key={"home"} />

@@ -1,1 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --color-toggle-light: yellow;
+    --color-toggle-dark: bisque;
+    --font-poppins: 'Poppins', sans-serif;
+}
+
+@theme {
+    --default-font-family: var(--font-poppins);
+    --color-background: white;
+    --color-background-secondary: hsl(0, 0%, 85%);
+    --color-foreground: hsl(0, 0%, 5%);
+    --color-accent: hsl(181, 61%, 36%);
+    --color-accent-secondary: hsl(1, 61%, 36%);
+    --color-muted: hsl(0, 0%, 50%);
+    --color-glass: hsl(0, 0%, 0%);
+}
+
+@layer theme {
+    .dark {
+        --color-background: black;
+        --color-background-secondary: hsl(0, 0%, 10%);
+        --color-foreground: hsl(0, 0%, 95%);
+        --color-accent: hsl(181, 100%, 56%);
+        --color-accent-secondary: hsl(1, 97%, 57%);
+        --color-muted: hsl(0, 0%, 50%);
+        --color-glass: hsl(0, 0%, 100%);
+    }
+}
+
+body {
+    font-family: var(--default-font-family);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

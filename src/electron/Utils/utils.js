@@ -1,4 +1,4 @@
-import { getUiPath } from "./pathResolver.js";
+import { getUiPath } from "../pathResolver.js";
 import { pathToFileURL } from 'url';
 import { ipcMain } from "electron";
 

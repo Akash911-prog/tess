@@ -1,0 +1,25 @@
+.panel {
+    padding: 10px;
+    border: 1px solid hsla(0, 0%, 100%, 0.15);
+    border-radius: 5px;
+    background-color: var(--color-background-secondary);
+}
+
+.user-message-box {
+    border: 1px solid var(--color-glass);
+    border-radius: 5px;
+    background-color: var(--color-background-secondary);
+    width: fit-content;
+    padding: 3px 5px 3px 20px;
+    justify-self: flex-end;
+    margin: 0.5rem 0rem;
+}
+
+.ai-message-box {
+    border: 1px solid var(--color-glass);
+    border-radius: 5px;
+    background-color: var(--color-background-secondary);
+    width: fit-content;
+    padding: 3px 20px 3px 5px;
+    justify-self: flex-start;
+}
