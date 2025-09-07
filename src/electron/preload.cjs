@@ -1,7 +1,7 @@
 const electron = require('electron')
 
-electron.contextBridge.exposeInMainWorld('API', {
-    hello: () => ipcInvoke('hello'),
+electron.contextBridge.exposeInMainWorld('electronAPI', {
+    subscribeDeviceResourceUsage: (callback) => ipcOn('satistics', callback),
 })
 
 function ipcOn(key, callback) {

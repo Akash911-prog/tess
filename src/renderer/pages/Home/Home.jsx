@@ -11,19 +11,7 @@ const App = () => {
     ]);
     const [cpu, setCpu] = useState(45);
     const [ram, setRam] = useState(62);
-    const [bat, setBat] = useState(85);
-    const [checkedControls, setCheckedControls] = useState({
-        audio: true,
-        display: true,
-        network: true,
-        bluetooth: true,
-    });
-    const [checkedLaunch, setCheckedLaunch] = useState({
-        browser: false,
-        ide: false,
-        shell: false,
-        files: false,
-    });
+    const [disk, setDisk] = useState(85);
 
     useEffect(() => {
         if (darkMode) {
@@ -42,23 +30,19 @@ const App = () => {
         input.value = '';
     };
 
-    const handleControlChange = (control) => {
-        setCheckedControls(prev => ({
-            ...prev,
-            [control]: !prev[control]
-        }));
-    };
-
-    const handleLaunchChange = (control) => {
-        setCheckedLaunch(prev => ({
-            ...prev,
-            [control]: !prev[control]
-        }));
-    };
 
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [chatMessages]);
+
+    useEffect(() => {
+        const unsub = window.electronAPI.subscribeDeviceResourceUsage((data) => {
+            setCpu((Math.floor(data.cpuUsage * 100)));
+            setRam((Math.floor(data.ramUsage * 100)));
+            setDisk((Math.floor(data.diskUsage * 100)));
+        })
+        return () => unsub();
+    }, [])
 
     return (
         <div className="px-8 py-3 h-screen w-[min(100%, 1400px)] mx-auto flex flex-col justify-center items-center">
@@ -91,9 +75,9 @@ const App = () => {
                                     <div className="progress-bar w-2/3 h-[4px] rounded-full overflow-hidden bg-background mr-1.5"><div className={`bg-accent h-[5px]`} style={{ width: `${ram}%` }}></div></div>
                                 </div>
                                 <div className="flex justify-between items-center">
-                                    <span>BAT</span>
-                                    <span>{bat}%</span>
-                                    <div className="progress-bar w-2/3 h-[4px] rounded-full overflow-hidden bg-background mr-1.5"><div className={`bg-accent h-[5px]`} style={{ width: `${bat}%` }}></div></div>
+                                    <span>disk</span>
+                                    <span>{disk}%</span>
+                                    <div className="progress-bar w-2/3 h-[4px] rounded-full overflow-hidden bg-background mr-1.5"><div className={`bg-accent h-[5px]`} style={{ width: `${disk}%` }}></div></div>
                                 </div>
                             </div>
                         </div>
@@ -162,40 +146,6 @@ const App = () => {
                             </div>
                         </div>
                         <div className="text-center mt-2 uppercase">SYSTEM READY</div>
-                    </div>
-
-                    {/* SYSTEM.CTRL Panel */}
-                    <div className="panel hidden">
-                        <span className="panel-title">SYSTEM CONTROLS</span>
-                        <div className="indicator"></div>
-                        <div className="grid grid-cols-2 gap-4 mt-8 text-xs">
-                            {Object.entries(checkedControls).map(([key, isChecked]) => (
-                                <label key={key} className="checkbox-container">
-                                    <div
-                                        className={`custom-checkbox ${isChecked ? 'checked' : ''}`}
-                                        onClick={() => handleControlChange(key)}
-                                    ></div>
-                                    {key.toUpperCase().replace('_', ' ')}
-                                </label>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* LAUNCH.EXE Panel */}
-                    <div className="panel flex-1 hidden">
-                        <span className="panel-title">LAUNCH</span>
-                        <div className="indicator"></div>
-                        <div className="grid grid-cols-2 gap-4 mt-8 text-xs">
-                            {Object.entries(checkedLaunch).map(([key, isChecked]) => (
-                                <label key={key} className="checkbox-container">
-                                    <div
-                                        className={`custom-checkbox ${isChecked ? 'checked' : ''}`}
-                                        onClick={() => handleLaunchChange(key)}
-                                    ></div>
-                                    {key.toUpperCase().replace('_', ' ')}
-                                </label>
-                            ))}
-                        </div>
                     </div>
                 </div>
             </div>

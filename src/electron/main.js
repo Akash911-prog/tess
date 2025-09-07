@@ -1,6 +1,7 @@
 import { app, BrowserWindow } from 'electron';
-import { ipcHandle, isDev } from './utils.js';
+import { ipcHandle, isDev } from './Utils/utils.js';
 import { getUiPath, getPreloadPath } from './pathResolver.js';
+import { pollResource } from './Utils/resourceUsage.js';
 
 app.whenReady().then(() => {
     const mainWindow = new BrowserWindow({
@@ -17,4 +18,5 @@ app.whenReady().then(() => {
         mainWindow.loadFile(getUiPath())
     }
     ipcHandle('hello', () => console.log('hello'))
+    pollResource(mainWindow)
 })

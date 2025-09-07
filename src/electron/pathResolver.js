@@ -1,6 +1,6 @@
 import { app } from "electron";
 import path from 'path';
-import { isDev } from "./utils.js";
+import { isDev } from "./Utils/utils.js";
 
 export function getPreloadPath() {
     // The path to the preload script depends on whether we are running in
