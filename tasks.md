@@ -18,14 +18,14 @@ This document outlines the roadmap and a comprehensive checklist of tasks for bu
 
 ## 🎨 Phase 2: UI/UX Design
 
-- [ ] Design layout:
-  - [ ] Chat area (message list, input box, send button)
-  - [ ] AI indicator (pulsing animation, mic toggle)
-  - [ ] Info area (weather, alarms, system info, quick actions)
-- [ ] Create responsive grid/flexbox layout
-- [ ] Implement dark/light theme toggle
-- [ ] Add animations (Framer Motion or CSS transitions)
-- [ ] Set up icons (Lucide, custom set, or Material UI)
+- [x] Design layout:
+  - [x] Chat area (message list, input box, send button)
+  - [x] AI indicator (pulsing animation, mic toggle)
+  - [x] Info area (weather, alarms, system info, quick actions)
+- [x] Create responsive grid/flexbox layout
+- [x] Implement dark/light theme toggle
+- [x] Add animations (Framer Motion or CSS transitions)
+- [x] Set up icons (Lucide, custom set, or Material UI)
 - [ ] Accessibility basics (keyboard shortcuts, ARIA labels)
 
 ---
