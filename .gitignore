@@ -166,3 +166,6 @@ venv.bak/
 
 # Windows
 Thumbs.db
+
+python
+wheelhouse

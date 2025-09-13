@@ -1,0 +1,4 @@
+joblib
+scikit-learn==1.6.1
+groq
+python-dotenv

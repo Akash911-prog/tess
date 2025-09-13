@@ -2,6 +2,7 @@ import { app, BrowserWindow } from 'electron';
 import { ipcHandle, isDev } from './Utils/utils.js';
 import { getUiPath, getPreloadPath } from './pathResolver.js';
 import { pollResource } from './Utils/resourceUsage.js';
+import { sendCommand, workerStop } from './pythonCommunicator.js';
 
 app.whenReady().then(() => {
     const mainWindow = new BrowserWindow({
@@ -19,4 +20,9 @@ app.whenReady().then(() => {
     }
     ipcHandle('hello', () => console.log('hello'))
     pollResource(mainWindow)
+
+    sendCommand("How are you?");
+
 })
+
+app.on('before-quit', () => workerStop());
