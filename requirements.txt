@@ -1,0 +1,7 @@
+spacy
+pyaudio
+pvporcupine
+selenium
+pyautogui
+keyboard
+sqlalchemy
