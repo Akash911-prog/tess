@@ -20,8 +20,8 @@ class STT():
     """
 
     def __init__(self, **kwargs) -> None:
-        self.indicator = Indicator()
         self.state : StateManager = kwargs.get("state_manager") #type: ignore
+        self.indicator = Indicator(self.state)
         self.running = True
 
         #==== load Procupine (wake word) =====#
@@ -81,16 +81,12 @@ class STT():
         start_btn = self.driver.find_element(By.ID, 'start')
         start_btn.click()
 
-        # Show the indicator
-        self.indicator.set_status(True)
+        self.state.set("listening")
 
         # Wait for the speech recognition to finish
         WebDriverWait(self.driver, 30).until(
             lambda d: d.execute_script("return document.body.getAttribute('data-speech');") == "stopped"
         )
-
-        # Hide the indicator
-        self.indicator.set_status(False)
 
         # Get the recognized text
         element = self.driver.find_element(By.CLASS_NAME, 'text')
@@ -113,8 +109,6 @@ class STT():
             pcm, _ = self.read_audio()
             # Check if the wake word is detected
             if self.detect_wake_word(pcm):
-                # Set the state to "listening"
-                self.state.set("listening")
                 print("Listening...")
                 # Break out of the loop
                 break

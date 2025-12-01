@@ -29,10 +29,8 @@ class Indicator(tk.Tk):
     def close(self):
         self.destroy()
 
-    def set_status(self, text: str):
-        self.status = text
-
     def _poll(self):
+        self.status = self.state.get()
         if self.status == 'listening':
             self.deiconify()
         
@@ -44,5 +42,4 @@ class Indicator(tk.Tk):
 if __name__ == "__main__":
     indicator = Indicator(StateManager())
     time.sleep(3)
-    indicator.set_status('listening')
     indicator.render()
