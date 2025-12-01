@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="start">start</button>
+    <p class="text"></p>
+    <button id="stop">stop</button>
+
+    <script>
+        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        const recognition = new SpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+        recognition.lang = "en-US";
+
+        const p = document.querySelector('.text');
+
+        let silenceTimeout;
+        const SILENCE_MS = 3000; // Stop after 3 seconds of silence
+
+        function resetSilenceTimer() {
+            clearTimeout(silenceTimeout);
+            silenceTimeout = setTimeout(() => {
+                console.log("⏳ No speech detected, stopping recognition...");
+                recognition.stop();
+            }, SILENCE_MS);
+        }
+
+        recognition.onstart = () => {
+            console.log("🎤 Listening...");
+            document.body.setAttribute("data-speech", "listening");
+            resetSilenceTimer();
+        };
+
+        recognition.onresult = (event) => {
+            resetSilenceTimer();
+
+            let finalText = "";
+            let interimText = "";
+
+            for (let i = event.resultIndex; i < event.results.length; i++) {
+                if (event.results[i].isFinal)
+                    finalText += event.results[i][0].transcript;
+                else
+                    interimText += event.results[i][0].transcript;
+            }
+
+            if (finalText) p.innerText = finalText;
+            if (interimText) console.log("Interim:", interimText);
+        };
+
+        recognition.onend = () => {
+            console.log("🛑 Recognition stopped");
+            document.body.setAttribute("data-speech", "stopped")
+        };
+
+        function startListening() {
+            recognition.start();
+        }
+
+        document.getElementById("start").addEventListener('click', startListening);
+        document.getElementById("stop").addEventListener('click', () => recognition.stop());
+    </script>
+</body>
+
+</html>

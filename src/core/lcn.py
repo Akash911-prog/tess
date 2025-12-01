@@ -110,7 +110,7 @@ class LCN():
                     best_score = score
                     best_cmd = cmd
 
-        if best_score < 0.55:   # similarity threshold
+        if best_score < 0.65:   # similarity threshold
             best_cmd = "unknown"
 
         return (best_cmd, text_doc.text)
@@ -177,8 +177,38 @@ class LCN():
                 print(f"Error during model download: {e}", file=sys.stderr)
                 sys.exit(1)
 
-    def normalize(self, text: str) -> str:
-        return ""
+    def normalize(self, text: str) -> dict[str, str | dict[str, str] | None]:
+        """
+        Normalizes the given text into a dictionary containing the intent and parameters.
+
+        Args:
+            text (str): The text to be normalized.
+
+        Returns:
+            dict[str, str | dict[str, str] | None]: A dictionary containing the normalized intent and parameters.
+                If the intent is unknown, returns a dictionary with intent as None and an empty parameters dictionary.
+        """
+        intent, _ = self.get_intent(text)
+
+        if intent == "code":
+            return {
+                "intent": intent,
+                "params": {
+                    "query": text
+                }
+            }
+
+        if intent != 'unknown':
+            params = self.extract_params(text)
+            return {
+                "intent": intent,
+                "params": params
+            }
+        
+        return {
+            "intent" : None,
+            "params" : {}
+        }
 
 if __name__ == "__main__":
     lcn = LCN()

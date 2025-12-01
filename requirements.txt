@@ -5,3 +5,4 @@ selenium
 pyautogui
 keyboard
 sqlalchemy
+python-dotenv
