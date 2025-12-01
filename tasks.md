@@ -15,7 +15,7 @@
 * [x] Set up project structure (`src/`, `plugins/`, `core/`, `tests/`)
 * [x] Initialize Python environment
 * [x] Install dependencies: `spaCy`, `pyaudio`, `keyboard`, `SoundVolumeView`, etc.
-* [ ] Load SpaCy model (`en_core_web_sm`)
+* [x] Load SpaCy model (`en_core_web_sm`)
 
 ---
 
@@ -29,9 +29,9 @@
 
 ### Tasks:
 
-* [ ] Implement **text simplifier** using SpaCy (lemmatization + stopword removal)
-* [ ] Design **canonical phrase mapping** (rule-based matcher)
-* [ ] Test simplifier on common media/system commands
+* [x] Implement **text simplifier** using SpaCy (lemmatization + stopword removal)
+* [x] Design **canonical phrase mapping** (rule-based matcher)
+* [x] Test simplifier on common media/system commands
 * [ ] Prepare **future slot-filling hooks** for multi-turn tasks
 
 ---

@@ -1,3 +1,5 @@
+from threading import Thread as T
+
 from core.lcn import LCN
 from core.state_manager import StateManager
 from core.stt import STT

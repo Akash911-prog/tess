@@ -1,14 +1,17 @@
 import tkinter as tk
 import time
 
+from core.state_manager import StateManager
+
 
 class Indicator(tk.Tk):
-    def __init__(self, geometry: str | None = '20x20+1850+20') -> None:
+    def __init__(self, state_manager: StateManager, geometry: str | None = '20x20+1850+20') -> None:
         super().__init__()
 
         self.title("Indicator")
         self.geometry(geometry)
-        self.status = False
+        self.state = state_manager
+        self.status = self.state.get()
         self.overrideredirect(True)
         self.attributes("-topmost", True)
         self.attributes('-transparentcolor', 'white')
@@ -26,11 +29,11 @@ class Indicator(tk.Tk):
     def close(self):
         self.destroy()
 
-    def set_status(self, text: bool):
+    def set_status(self, text: str):
         self.status = text
 
     def _poll(self):
-        if self.status:
+        if self.status == 'listening':
             self.deiconify()
         
         else:
@@ -39,7 +42,7 @@ class Indicator(tk.Tk):
         self.after(1000, self._poll)
 
 if __name__ == "__main__":
-    indicator = Indicator()
+    indicator = Indicator(StateManager())
     time.sleep(3)
-    indicator.set_status(True)
+    indicator.set_status('listening')
     indicator.render()
