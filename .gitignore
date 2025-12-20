@@ -218,7 +218,6 @@ dmypy.json
 # Local configs
 *.env
 *.local
-configs/
 config.json
 settings.json
 

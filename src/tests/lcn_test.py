@@ -138,7 +138,7 @@ class TestParameterExtraction:
     
     def test_extract_target(self, lcn_instance):
         params = lcn_instance.extract_params("open chrome browser")
-        assert "TARGET" in params or "APP" in params
+        assert "target" in params or "app" in params
     
     def test_extract_number(self, lcn_instance):
         # This depends on your params_pattern configuration
@@ -149,8 +149,8 @@ class TestParameterExtraction:
     def test_noun_chunk_fallback(self, lcn_instance):
         params = lcn_instance.extract_params("open the settings application")
         # Should extract "settings application" as target
-        assert "TARGET" in params
-        assert "settings" in params["TARGET"].lower()
+        assert "target" in params
+        assert "settings" in params["target"].lower()
 
 
 class TestNormalization:
