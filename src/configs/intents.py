@@ -170,14 +170,14 @@ INTENTS = {
         "volume up", "increase volume", "raise volume",
         "make louder", "turn up volume", "boost volume",
         "louder", "raise sound", "increase sound",
-        "up volume"
+        "up volume", "turn up sound", "boost sound"
     ],
 
     "volume down": [
         "volume down", "decrease volume", "lower volume",
         "make quieter", "turn down volume", "reduce volume",
         "quieter", "lower sound", "decrease sound",
-        "down volume"
+        "down volume", "turn down sound", "reduce sound"
     ],
 
     "mute": [
@@ -271,7 +271,7 @@ INTENTS = {
     ],
 
     # Search & Find
-        "search": [
+    "search": [
         "search", "find", "look for",
         "search for", "find text",
         "locate", "look up", "seek",
@@ -319,12 +319,49 @@ INTENTS = {
 
     # AI/Code Generation
     "code": [
-        "code", "program", "script",
-        "write code", "generate code",
-        "build program", "create script",
-        "develop code", "code generation",
-        "write function", "create function",
-        "build application", "develop script"
+        # Direct coding requests
+        "write code for me",
+        "generate code for this",
+        "create a program",
+        "build a script",
+        "develop an application",
+        "make a function",
+        "write a function for me",
+        "create a function that",
+
+        # Article / explanation style (important)
+        "write an article on",
+        "write an article about programming",
+        "explain how to code",
+        "explain this code",
+        "teach me how to program",
+        "show me how to build",
+
+        # Task-based requests
+        "build a program that",
+        "create a script that",
+        "make a program that",
+        "write a script to",
+        "generate a function to",
+
+        # Web / app specific
+        "build a web application",
+        "create a website",
+        "generate a login page",
+        "write backend code",
+        "write frontend code",
+
+        # AI-style phrasing
+        "can you write code",
+        "can you generate code",
+        "help me write code",
+        "i want to build a program",
+        "i need a script that",
+
+        # General dev intent
+        "program this for me",
+        "develop this feature",
+        "implement this logic"
     ],
 
     # Help

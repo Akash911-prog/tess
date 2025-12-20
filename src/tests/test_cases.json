@@ -1,0 +1,6072 @@
+{
+  "open": [
+    {
+      "input": "would you open",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you open for me",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "open right now",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "launch right now",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you launch for me",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please launch",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you start for me",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey start",
+      "expected": "open",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "start right now",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "run right now",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "run for me",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you run",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you execute",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you execute for me",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you execute",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "open file right now",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "open file please",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey open file",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you open folder",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you open folder for me",
+      "expected": "open",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please open folder",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you open settings",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "open settings please",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please open settings",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you open app",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey open app",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you open app for me",
+      "expected": "open",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "open window right now",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "open window please",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you open window for me",
+      "expected": "open",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please open application",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "open application right now",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey open application",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you open program for me",
+      "expected": "open",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "open program please",
+      "expected": "open",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "open program right now",
+      "expected": "open",
+      "min_confidence": 0.7
+    }
+  ],
+  "close": [
+    {
+      "input": "close",
+      "expected": "close",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey close",
+      "expected": "close",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please close",
+      "expected": "close",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you exit",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please exit",
+      "expected": "close",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "exit right now",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey quit",
+      "expected": "close",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "quit please",
+      "expected": "close",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "quit right now",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please shut",
+      "expected": "close",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey please shut",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you shut for me",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you end",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you end for me",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "end",
+      "expected": "close",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you terminate for me",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "terminate right now",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey terminate",
+      "expected": "close",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "close file right now",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you close file",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you close file",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "close app quickly",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you close app for me",
+      "expected": "close",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "close app please",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey close application",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "close application right now",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you close application",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey close window",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you close window",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please close window",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "close program right now",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey close program",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please close program",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you shut window",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "shut window right now",
+      "expected": "close",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please shut window",
+      "expected": "close",
+      "min_confidence": 0.7
+    }
+  ],
+  "copy": [
+    {
+      "input": "copy please",
+      "expected": "copy",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey please copy",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please copy",
+      "expected": "copy",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you duplicate for me",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey duplicate",
+      "expected": "copy",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "duplicate please",
+      "expected": "copy",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "replicate quickly",
+      "expected": "copy",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "replicate",
+      "expected": "copy",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please replicate",
+      "expected": "copy",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please copy text",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you copy text for me",
+      "expected": "copy",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey copy text",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "copy selection quickly",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you copy selection for me",
+      "expected": "copy",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "copy selection right now",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "copy file right now",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey copy file",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "copy file quickly",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey copy this",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "copy this",
+      "expected": "copy",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please copy this",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "copy that right now",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you copy that for me",
+      "expected": "copy",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please copy that",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey copy content",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you copy content for me",
+      "expected": "copy",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "copy content",
+      "expected": "copy",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "make copy please",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please make copy",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you make copy",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey duplicate this",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "duplicate this",
+      "expected": "copy",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you duplicate this for me",
+      "expected": "copy",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you duplicate selection for me",
+      "expected": "copy",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "duplicate selection right now",
+      "expected": "copy",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you duplicate selection",
+      "expected": "copy",
+      "min_confidence": 0.7
+    }
+  ],
+  "paste": [
+    {
+      "input": "could you paste for me",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "paste right now",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "paste please",
+      "expected": "paste",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you insert",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you insert for me",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "insert",
+      "expected": "paste",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you paste here",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "paste here",
+      "expected": "paste",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you paste here for me",
+      "expected": "paste",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey paste content",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "paste content right now",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you paste content",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please paste text",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "paste text please",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you paste text for me",
+      "expected": "paste",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please paste clipboard",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "paste clipboard right now",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you paste clipboard for me",
+      "expected": "paste",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you insert clipboard",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you insert clipboard",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please insert clipboard",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "paste from clipboard",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "paste from clipboard please",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey paste from clipboard",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please insert content",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you insert content",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you insert content",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you put clipboard",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey put clipboard",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "put clipboard",
+      "expected": "paste",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "add clipboard please",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you add clipboard",
+      "expected": "paste",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey add clipboard",
+      "expected": "paste",
+      "min_confidence": 0.7
+    }
+  ],
+  "cut": [
+    {
+      "input": "please cut",
+      "expected": "cut",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you cut for me",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "cut please",
+      "expected": "cut",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "remove and copy please",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you remove and copy for me",
+      "expected": "cut",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you remove and copy",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you cut text",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey cut text",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "cut text right now",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "cut this right now",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "cut this please",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please cut this",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "cut selection",
+      "expected": "cut",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey cut selection",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you cut selection for me",
+      "expected": "cut",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey please cut and copy",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you cut and copy",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "cut and copy please",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "remove selected please",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please remove selected",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please remove selected",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you cut to clipboard",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please cut to clipboard",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "cut to clipboard right now",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you extract selection",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please extract selection",
+      "expected": "cut",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "extract selection please",
+      "expected": "cut",
+      "min_confidence": 0.7
+    }
+  ],
+  "delete": [
+    {
+      "input": "could you delete",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you delete for me",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "delete",
+      "expected": "delete",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "remove right now",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you remove for me",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "remove quickly",
+      "expected": "delete",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey erase",
+      "expected": "delete",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "erase right now",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "erase for me",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "trash",
+      "expected": "delete",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "trash right now",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey trash",
+      "expected": "delete",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "would you delete file",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "delete file",
+      "expected": "delete",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please delete file",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "delete this right now",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey delete this",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you delete this for me",
+      "expected": "delete",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you delete item for me",
+      "expected": "delete",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey please delete item",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you delete item",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "remove file",
+      "expected": "delete",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "remove file right now",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you remove file",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you remove this",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please remove this",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "remove this right now",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please remove item",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "remove item",
+      "expected": "delete",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you remove item",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "erase file right now",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "erase file",
+      "expected": "delete",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you erase file for me",
+      "expected": "delete",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey please erase this",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "erase this quickly",
+      "expected": "delete",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you erase this for me",
+      "expected": "delete",
+      "min_confidence": 0.6
+    }
+  ],
+  "save": [
+    {
+      "input": "please save",
+      "expected": "save",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you save",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you save for me",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you store for me",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you store",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "store please",
+      "expected": "save",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you write for me",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "write",
+      "expected": "save",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "write please",
+      "expected": "save",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey save file",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "save file please",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you save file",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please save document",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "save document",
+      "expected": "save",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "save document please",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "save progress please",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you save progress for me",
+      "expected": "save",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "save progress",
+      "expected": "save",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "save work",
+      "expected": "save",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "save work right now",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you save work",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you save changes for me",
+      "expected": "save",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "save changes",
+      "expected": "save",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "save changes please",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you store file",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "store file please",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "store file right now",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you write file for me",
+      "expected": "save",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please write file",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "write file right now",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "commit changes please",
+      "expected": "save",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you commit changes for me",
+      "expected": "save",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey commit changes",
+      "expected": "save",
+      "min_confidence": 0.7
+    }
+  ],
+  "save as": [
+    {
+      "input": "save as quickly",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "save as right now",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you save as for me",
+      "expected": "save as",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you save with name",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "save with name right now",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you save with name for me",
+      "expected": "save as",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please save copy",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "save copy please",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you save copy for me",
+      "expected": "save as",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "save with new name please",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please save with new name",
+      "expected": "save as",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you save with new name",
+      "expected": "save as",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please export as",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you export as",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "export as quickly",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey save as new file",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "save as new file right now",
+      "expected": "save as",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey please save as new file",
+      "expected": "save as",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "create copy as right now",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "create copy as please",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please create copy as",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you save to new location",
+      "expected": "save as",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "save to new location please",
+      "expected": "save as",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please save to new location",
+      "expected": "save as",
+      "min_confidence": 0.7
+    }
+  ],
+  "undo": [
+    {
+      "input": "can you undo",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "undo right now",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please undo",
+      "expected": "undo",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you revert for me",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please revert",
+      "expected": "undo",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "revert",
+      "expected": "undo",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey go back",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go back for me",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you go back",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you undo action",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey undo action",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "undo action please",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey undo last change",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you undo last change for me",
+      "expected": "undo",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "undo last change quickly",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "undo last action",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "undo last action right now",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "undo last action for me",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you revert change",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey revert change",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "revert change please",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go back one step",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you go back one step",
+      "expected": "undo",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "go back one step for me",
+      "expected": "undo",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please reverse action",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey reverse action",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you reverse action",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you cancel last action for me",
+      "expected": "undo",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "cancel last action quickly",
+      "expected": "undo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey cancel last action",
+      "expected": "undo",
+      "min_confidence": 0.7
+    }
+  ],
+  "redo": [
+    {
+      "input": "please redo",
+      "expected": "redo",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you redo",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey redo",
+      "expected": "redo",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you redo action",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you redo action",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you redo action for me",
+      "expected": "redo",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you redo last for me",
+      "expected": "redo",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "redo last right now",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please redo last",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you redo change",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please redo change",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "redo change right now",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "repeat action right now",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you repeat action for me",
+      "expected": "redo",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey repeat action",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go forward please",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go forward for me",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you go forward for me",
+      "expected": "redo",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "restore action please",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "restore action right now",
+      "expected": "redo",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please restore action",
+      "expected": "redo",
+      "min_confidence": 0.7
+    }
+  ],
+  "select all": [
+    {
+      "input": "select all please",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you select all for me",
+      "expected": "select all",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you select all",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey highlight all",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you highlight all",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "highlight all right now",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you select everything",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you select everything for me",
+      "expected": "select all",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please select everything",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please highlight everything",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "highlight everything right now",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please highlight everything",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you select all text",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "select all text",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "select all text please",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "highlight all text please",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey highlight all text",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you highlight all text",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you mark all for me",
+      "expected": "select all",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey mark all",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "mark all please",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "choose all",
+      "expected": "select all",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please choose all",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you choose all",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "select entire document right now",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "select entire document",
+      "expected": "select all",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey select entire document",
+      "expected": "select all",
+      "min_confidence": 0.7
+    }
+  ],
+  "new tab": [
+    {
+      "input": "new tab please",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please new tab",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you new tab for me",
+      "expected": "new tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "open new tab please",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you open new tab",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you open new tab for me",
+      "expected": "new tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "create tab please",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "create tab",
+      "expected": "new tab",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "create tab right now",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "create new tab right now",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you create new tab",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "create new tab for me",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "start new tab",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you start new tab",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "start new tab right now",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you open tab for me",
+      "expected": "new tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey open tab",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "open tab quickly",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you add tab for me",
+      "expected": "new tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you add tab",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you add tab",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "make new tab",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you make new tab for me",
+      "expected": "new tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey make new tab",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "add new tab",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "add new tab right now",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "add new tab please",
+      "expected": "new tab",
+      "min_confidence": 0.7
+    }
+  ],
+  "close tab": [
+    {
+      "input": "please close tab",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "close tab right now",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey close tab",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please close this tab",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "close this tab right now",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "close this tab",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "close current tab for me",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you close current tab",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please close current tab",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you close active tab",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey close active tab",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please close active tab",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey shut tab",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "shut tab",
+      "expected": "close tab",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "shut tab please",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "remove tab please",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "remove tab quickly",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please remove tab",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "end tab",
+      "expected": "close tab",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey end tab",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "end tab for me",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "kill tab",
+      "expected": "close tab",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "kill tab right now",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey kill tab",
+      "expected": "close tab",
+      "min_confidence": 0.7
+    }
+  ],
+  "next tab": [
+    {
+      "input": "next tab right now",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey next tab",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you next tab for me",
+      "expected": "next tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "go next tab right now",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you go next tab",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey go next tab",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please move next tab",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "move next tab right now",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you move next tab for me",
+      "expected": "next tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "switch next tab please",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you switch next tab",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "switch next tab",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go to next tab right now",
+      "expected": "next tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you go to next tab for me",
+      "expected": "next tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you go to next tab",
+      "expected": "next tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you forward tab for me",
+      "expected": "next tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you forward tab",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "forward tab please",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please right tab",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "right tab please",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey right tab",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "tab right",
+      "expected": "next tab",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "tab right right now",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please tab right",
+      "expected": "next tab",
+      "min_confidence": 0.7
+    }
+  ],
+  "previous tab": [
+    {
+      "input": "previous tab",
+      "expected": "previous tab",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "previous tab right now",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please previous tab",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "prev tab",
+      "expected": "previous tab",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey prev tab",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please prev tab",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please go previous tab",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go previous tab please",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you go previous tab",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please back tab",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "back tab quickly",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "back tab",
+      "expected": "previous tab",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey go back tab",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go back tab please",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go back tab right now",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "left tab",
+      "expected": "previous tab",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "left tab right now",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "left tab quickly",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "tab left",
+      "expected": "previous tab",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you tab left",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you tab left for me",
+      "expected": "previous tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you prior tab for me",
+      "expected": "previous tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you prior tab",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please prior tab",
+      "expected": "previous tab",
+      "min_confidence": 0.7
+    }
+  ],
+  "switch tab": [
+    {
+      "input": "hey please switch tab",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "switch tab right now",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you switch tab",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please change tab",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you change tab",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "change tab right now",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go to tab please",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you go to tab for me",
+      "expected": "switch tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "go to tab for me",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "move to tab please",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "move to tab right now",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you move to tab for me",
+      "expected": "switch tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you jump to tab for me",
+      "expected": "switch tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "jump to tab",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please jump to tab",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you select tab for me",
+      "expected": "switch tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "select tab",
+      "expected": "switch tab",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "select tab please",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you navigate to tab",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "navigate to tab",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "navigate to tab right now",
+      "expected": "switch tab",
+      "min_confidence": 0.7
+    }
+  ],
+  "open tab": [
+    {
+      "input": "could you open tab for me",
+      "expected": "open tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey open tab",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you open tab",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you go to tab number for me",
+      "expected": "open tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "go to tab number quickly",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go to tab number right now",
+      "expected": "open tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey switch to tab",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "switch to tab right now",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "switch to tab please",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "select tab number please",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you select tab number",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please select tab number",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please jump to tab number",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "jump to tab number please",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "jump to tab number right now",
+      "expected": "open tab",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey tab number",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please tab number",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "tab number right now",
+      "expected": "open tab",
+      "min_confidence": 0.7
+    }
+  ],
+  "minimize window": [
+    {
+      "input": "please minimize",
+      "expected": "minimize window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "minimize",
+      "expected": "minimize window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey minimize",
+      "expected": "minimize window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey minimize window",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please minimize window",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "minimize window right now",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you minimize this",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please minimize this",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "minimize this right now",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you reduce window",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you reduce window for me",
+      "expected": "minimize window",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "reduce window quickly",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you shrink window for me",
+      "expected": "minimize window",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "shrink window",
+      "expected": "minimize window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you shrink window",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey hide window",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hide window right now",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hide window please",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "minimize app",
+      "expected": "minimize window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey minimize app",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "minimize app right now",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "collapse window quickly",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you collapse window",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "collapse window please",
+      "expected": "minimize window",
+      "min_confidence": 0.7
+    }
+  ],
+  "maximize window": [
+    {
+      "input": "could you maximize for me",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "maximize right now",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "maximize quickly",
+      "expected": "maximize window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "maximize window right now",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you maximize window for me",
+      "expected": "maximize window",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "maximize window",
+      "expected": "maximize window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "full screen right now",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey full screen",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "full screen please",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "fullscreen window right now",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey fullscreen window",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "fullscreen window",
+      "expected": "maximize window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "expand window please",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "expand window quickly",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey expand window",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "enlarge window right now",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please enlarge window",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "enlarge window",
+      "expected": "maximize window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you make fullscreen",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please make fullscreen",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "make fullscreen right now",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey maximize app",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you maximize app for me",
+      "expected": "maximize window",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "maximize app please",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey full screen window",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "full screen window right now",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "full screen window",
+      "expected": "maximize window",
+      "min_confidence": 0.7
+    }
+  ],
+  "restore window": [
+    {
+      "input": "restore window please",
+      "expected": "restore window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please restore window",
+      "expected": "restore window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "restore window",
+      "expected": "restore window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "restore size please",
+      "expected": "restore window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you restore size for me",
+      "expected": "restore window",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey restore size",
+      "expected": "restore window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please unmaximize",
+      "expected": "restore window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "unmaximize quickly",
+      "expected": "restore window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "unmaximize please",
+      "expected": "restore window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey normal size",
+      "expected": "restore window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "normal size please",
+      "expected": "restore window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "normal size right now",
+      "expected": "restore window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you default size for me",
+      "expected": "restore window",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please default size",
+      "expected": "restore window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "default size",
+      "expected": "restore window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "restore normal please",
+      "expected": "restore window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you restore normal",
+      "expected": "restore window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "restore normal for me",
+      "expected": "restore window",
+      "min_confidence": 0.7
+    }
+  ],
+  "close all windows": [
+    {
+      "input": "close all windows",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please close all windows",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you close all windows for me",
+      "expected": "close all windows",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "close everything quickly",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "close everything",
+      "expected": "close all windows",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "close everything please",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "close all apps for me",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you close all apps for me",
+      "expected": "close all windows",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "close all apps please",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "close all applications",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "close all applications please",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you close all applications",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you shut all windows for me",
+      "expected": "close all windows",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "shut all windows please",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please shut all windows",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "exit all right now",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you exit all",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "exit all please",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "quit all",
+      "expected": "close all windows",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you quit all for me",
+      "expected": "close all windows",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "quit all right now",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey close all programs",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "close all programs",
+      "expected": "close all windows",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you close all programs for me",
+      "expected": "close all windows",
+      "min_confidence": 0.6
+    }
+  ],
+  "switch window": [
+    {
+      "input": "can you switch window",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "switch window for me",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please switch window",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "change window please",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey change window",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "change window",
+      "expected": "switch window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please next window",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "next window please",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "next window",
+      "expected": "switch window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "move to next window",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please move to next window",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey move to next window",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey go to next window",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go to next window right now",
+      "expected": "switch window",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "go to next window",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "alternate window right now",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey alternate window",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "alternate window",
+      "expected": "switch window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you toggle window for me",
+      "expected": "switch window",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you toggle window",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "toggle window right now",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "switch application",
+      "expected": "switch window",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please switch application",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you switch application",
+      "expected": "switch window",
+      "min_confidence": 0.7
+    }
+  ],
+  "volume up": [
+    {
+      "input": "please volume up",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey volume up",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you volume up",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey increase volume",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please increase volume",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "increase volume",
+      "expected": "volume up",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you raise volume",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "raise volume please",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey raise volume",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you make louder for me",
+      "expected": "volume up",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "make louder for me",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "make louder",
+      "expected": "volume up",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "turn up volume",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you turn up volume",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "turn up volume right now",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you boost volume for me",
+      "expected": "volume up",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "boost volume right now",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "boost volume",
+      "expected": "volume up",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "louder right now",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you louder for me",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you louder",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey raise sound",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "raise sound",
+      "expected": "volume up",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "raise sound right now",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you increase sound for me",
+      "expected": "volume up",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you increase sound",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "increase sound",
+      "expected": "volume up",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "up volume right now",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you up volume for me",
+      "expected": "volume up",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "up volume please",
+      "expected": "volume up",
+      "min_confidence": 0.7
+    }
+  ],
+  "volume down": [
+    {
+      "input": "volume down please",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please volume down",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you volume down for me",
+      "expected": "volume down",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "decrease volume",
+      "expected": "volume down",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please decrease volume",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "decrease volume please",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "lower volume",
+      "expected": "volume down",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please lower volume",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "lower volume please",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "make quieter",
+      "expected": "volume down",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please make quieter",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey make quieter",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "turn down volume please",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "turn down volume right now",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please turn down volume",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "reduce volume please",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "reduce volume",
+      "expected": "volume down",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "reduce volume quickly",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "quieter for me",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please quieter",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please quieter",
+      "expected": "volume down",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please lower sound",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please lower sound",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you lower sound",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "decrease sound right now",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you decrease sound",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey decrease sound",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you down volume",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please down volume",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey down volume",
+      "expected": "volume down",
+      "min_confidence": 0.7
+    }
+  ],
+  "mute": [
+    {
+      "input": "hey please mute",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you mute for me",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you mute",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "silence",
+      "expected": "mute",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey silence",
+      "expected": "mute",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you silence",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey mute volume",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you mute volume",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "mute volume right now",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please silence sound",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey silence sound",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "silence sound right now",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "turn off sound",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "turn off sound please",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please turn off sound",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "mute audio right now",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey mute audio",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you mute audio for me",
+      "expected": "mute",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey no sound",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "no sound right now",
+      "expected": "mute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "no sound please",
+      "expected": "mute",
+      "min_confidence": 0.7
+    }
+  ],
+  "unmute": [
+    {
+      "input": "unmute please",
+      "expected": "unmute",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey unmute",
+      "expected": "unmute",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you unmute for me",
+      "expected": "unmute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you unmute volume for me",
+      "expected": "unmute",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "unmute volume right now",
+      "expected": "unmute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you unmute volume",
+      "expected": "unmute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "restore sound",
+      "expected": "unmute",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please restore sound",
+      "expected": "unmute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you restore sound for me",
+      "expected": "unmute",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you turn on sound for me",
+      "expected": "unmute",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "turn on sound please",
+      "expected": "unmute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you turn on sound",
+      "expected": "unmute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "enable sound please",
+      "expected": "unmute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you enable sound for me",
+      "expected": "unmute",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "enable sound",
+      "expected": "unmute",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you unmute audio",
+      "expected": "unmute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please unmute audio",
+      "expected": "unmute",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "unmute audio",
+      "expected": "unmute",
+      "min_confidence": 0.85
+    }
+  ],
+  "wifi": [
+    {
+      "input": "Wi-Fi right now",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey Wi-Fi",
+      "expected": "wifi",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you Wi-Fi for me",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please wi-fi",
+      "expected": "wifi",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey please wi-fi",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey wi-fi",
+      "expected": "wifi",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "wireless right now",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "wireless for me",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "wireless",
+      "expected": "wifi",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "toggle Wi-Fi",
+      "expected": "wifi",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey toggle Wi-Fi",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please toggle Wi-Fi",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you Wi-Fi settings for me",
+      "expected": "wifi",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "Wi-Fi settings please",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "Wi-Fi settings right now",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please turn Wi-Fi on",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "turn Wi-Fi on please",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you turn Wi-Fi on for me",
+      "expected": "wifi",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "turn wifi off right now",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please turn wifi off",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you turn wifi off",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "enable wifi please",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you enable wifi for me",
+      "expected": "wifi",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you enable wifi",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you disable wifi for me",
+      "expected": "wifi",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please disable wifi",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "disable wifi",
+      "expected": "wifi",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "wifi on",
+      "expected": "wifi",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "wifi on please",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you wifi on for me",
+      "expected": "wifi",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "wifi off right now",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you wifi off for me",
+      "expected": "wifi",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "wifi off",
+      "expected": "wifi",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "connect wifi quickly",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please connect wifi",
+      "expected": "wifi",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "connect wifi",
+      "expected": "wifi",
+      "min_confidence": 0.85
+    }
+  ],
+  "bluetooth": [
+    {
+      "input": "bluetooth",
+      "expected": "bluetooth",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "bluetooth please",
+      "expected": "bluetooth",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you bluetooth",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "toggle bluetooth",
+      "expected": "bluetooth",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey toggle bluetooth",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you toggle bluetooth",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "bluetooth settings",
+      "expected": "bluetooth",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please bluetooth settings",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you bluetooth settings",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you turn bluetooth on",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "turn bluetooth on for me",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "turn bluetooth on right now",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey turn bluetooth off",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "turn bluetooth off",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you turn bluetooth off",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you enable bluetooth for me",
+      "expected": "bluetooth",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "enable bluetooth",
+      "expected": "bluetooth",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "enable bluetooth right now",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please disable bluetooth",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "disable bluetooth please",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you disable bluetooth for me",
+      "expected": "bluetooth",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you bluetooth on for me",
+      "expected": "bluetooth",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey please bluetooth on",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please bluetooth on",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "bluetooth off for me",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "bluetooth off please",
+      "expected": "bluetooth",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "bluetooth off",
+      "expected": "bluetooth",
+      "min_confidence": 0.85
+    }
+  ],
+  "shutdown": [
+    {
+      "input": "could you shutdown for me",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "shutdown right now",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "shutdown quickly",
+      "expected": "shutdown",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey please shut down",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you shut down",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "shut down",
+      "expected": "shutdown",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey power off",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "power off",
+      "expected": "shutdown",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please power off",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "turn off right now",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey turn off",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please turn off",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please power down",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey power down",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "power down",
+      "expected": "shutdown",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey shut down computer",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you shut down computer for me",
+      "expected": "shutdown",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "shut down computer for me",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "turn off computer right now",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "turn off computer please",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you turn off computer for me",
+      "expected": "shutdown",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "turn off pc right now",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey turn off pc",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you turn off pc",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "shutdown system right now",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "shutdown system please",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey shutdown system",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey power off system",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you power off system",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "power off system please",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "shut down pc right now",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you shut down pc for me",
+      "expected": "shutdown",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "would you shut down pc",
+      "expected": "shutdown",
+      "min_confidence": 0.7
+    }
+  ],
+  "restart": [
+    {
+      "input": "could you restart for me",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "restart",
+      "expected": "restart",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey restart",
+      "expected": "restart",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "reboot",
+      "expected": "restart",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please reboot",
+      "expected": "restart",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "reboot right now",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "restart computer please",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey restart computer",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "restart computer right now",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey reboot computer",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "reboot computer for me",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "reboot computer right now",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you restart system for me",
+      "expected": "restart",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "restart system please",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "restart system right now",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "reboot system please",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "reboot system right now",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you reboot system",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "restart pc please",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you restart pc for me",
+      "expected": "restart",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "restart pc for me",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "reboot pc right now",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "reboot pc please",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you reboot pc",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "reset computer right now",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please reset computer",
+      "expected": "restart",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "reset computer",
+      "expected": "restart",
+      "min_confidence": 0.85
+    }
+  ],
+  "sleep": [
+    {
+      "input": "please sleep",
+      "expected": "sleep",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you sleep for me",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you sleep",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hibernate",
+      "expected": "sleep",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey please hibernate",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hibernate please",
+      "expected": "sleep",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey suspend",
+      "expected": "sleep",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "suspend right now",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you suspend",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "sleep computer right now",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please sleep computer",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you sleep computer for me",
+      "expected": "sleep",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you put to sleep",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "put to sleep",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey put to sleep",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you suspend computer",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you suspend computer for me",
+      "expected": "sleep",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey suspend computer",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hibernate computer please",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you hibernate computer for me",
+      "expected": "sleep",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "would you hibernate computer",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please sleep mode",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you sleep mode for me",
+      "expected": "sleep",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "sleep mode",
+      "expected": "sleep",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey standby",
+      "expected": "sleep",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please standby",
+      "expected": "sleep",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "standby right now",
+      "expected": "sleep",
+      "min_confidence": 0.7
+    }
+  ],
+  "lock": [
+    {
+      "input": "lock",
+      "expected": "lock",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey lock",
+      "expected": "lock",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you lock for me",
+      "expected": "lock",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "lock screen quickly",
+      "expected": "lock",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please lock screen",
+      "expected": "lock",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "lock screen",
+      "expected": "lock",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "lock computer please",
+      "expected": "lock",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey lock computer",
+      "expected": "lock",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please lock computer",
+      "expected": "lock",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you lock pc for me",
+      "expected": "lock",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "lock pc please",
+      "expected": "lock",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "lock pc",
+      "expected": "lock",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "lock system please",
+      "expected": "lock",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you lock system",
+      "expected": "lock",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you lock system for me",
+      "expected": "lock",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "screen lock",
+      "expected": "lock",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "screen lock please",
+      "expected": "lock",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you screen lock for me",
+      "expected": "lock",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you secure screen",
+      "expected": "lock",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please secure screen",
+      "expected": "lock",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "secure screen right now",
+      "expected": "lock",
+      "min_confidence": 0.7
+    }
+  ],
+  "scroll up": [
+    {
+      "input": "could you scroll up for me",
+      "expected": "scroll up",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "scroll up",
+      "expected": "scroll up",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "scroll up please",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please scroll upward",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please scroll upward",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "scroll upward",
+      "expected": "scroll up",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey page up",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "page up please",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "page up right now",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you move up",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey move up",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "move up please",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please go up",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go up please",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you go up",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "up",
+      "expected": "scroll up",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "up quickly",
+      "expected": "scroll up",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you up for me",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you scroll to top for me",
+      "expected": "scroll up",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "scroll to top",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "scroll to top please",
+      "expected": "scroll up",
+      "min_confidence": 0.7
+    }
+  ],
+  "scroll down": [
+    {
+      "input": "can you scroll down",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey scroll down",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "scroll down please",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please scroll downward",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "scroll downward",
+      "expected": "scroll down",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey scroll downward",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "page down",
+      "expected": "scroll down",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please page down",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "page down right now",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you move down for me",
+      "expected": "scroll down",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey move down",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "move down right now",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go down",
+      "expected": "scroll down",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you go down for me",
+      "expected": "scroll down",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "go down right now",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you down",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please down",
+      "expected": "scroll down",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey down",
+      "expected": "scroll down",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "scroll to bottom quickly",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "scroll to bottom",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please scroll to bottom",
+      "expected": "scroll down",
+      "min_confidence": 0.7
+    }
+  ],
+  "go back": [
+    {
+      "input": "hey go back",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go back for me",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go back",
+      "expected": "go back",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you back for me",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please back",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "back",
+      "expected": "go back",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey navigate back",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please navigate back",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you navigate back",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please previous page",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "previous page quickly",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "previous page right now",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "back page please",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "back page right now",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please back page",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please return",
+      "expected": "go back",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "would you return",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey return",
+      "expected": "go back",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "go to previous please",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey go to previous",
+      "expected": "go back",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please go to previous",
+      "expected": "go back",
+      "min_confidence": 0.7
+    }
+  ],
+  "go forward": [
+    {
+      "input": "could you go forward",
+      "expected": "go forward",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "go forward please",
+      "expected": "go forward",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you go forward for me",
+      "expected": "go forward",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you forward",
+      "expected": "go forward",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "forward",
+      "expected": "go forward",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey forward",
+      "expected": "go forward",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you navigate forward",
+      "expected": "go forward",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please navigate forward",
+      "expected": "go forward",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey navigate forward",
+      "expected": "go forward",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey next page",
+      "expected": "go forward",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you next page",
+      "expected": "go forward",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please next page",
+      "expected": "go forward",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "forward page please",
+      "expected": "go forward",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "forward page for me",
+      "expected": "go forward",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "forward page right now",
+      "expected": "go forward",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey advance",
+      "expected": "go forward",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "advance please",
+      "expected": "go forward",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you advance",
+      "expected": "go forward",
+      "min_confidence": 0.7
+    }
+  ],
+  "refresh": [
+    {
+      "input": "please refresh",
+      "expected": "refresh",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "refresh right now",
+      "expected": "refresh",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you refresh",
+      "expected": "refresh",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "reload please",
+      "expected": "refresh",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey reload",
+      "expected": "refresh",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you reload for me",
+      "expected": "refresh",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you refresh page for me",
+      "expected": "refresh",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you refresh page",
+      "expected": "refresh",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "refresh page right now",
+      "expected": "refresh",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you reload page",
+      "expected": "refresh",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you reload page for me",
+      "expected": "refresh",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey reload page",
+      "expected": "refresh",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "update page for me",
+      "expected": "refresh",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "update page please",
+      "expected": "refresh",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you update page",
+      "expected": "refresh",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you refresh browser for me",
+      "expected": "refresh",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey refresh browser",
+      "expected": "refresh",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "refresh browser",
+      "expected": "refresh",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you reload browser for me",
+      "expected": "refresh",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "reload browser",
+      "expected": "refresh",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey reload browser",
+      "expected": "refresh",
+      "min_confidence": 0.7
+    }
+  ],
+  "search": [
+    {
+      "input": "search please",
+      "expected": "search",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please search",
+      "expected": "search",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey search",
+      "expected": "search",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please find",
+      "expected": "search",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "find",
+      "expected": "search",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "find please",
+      "expected": "search",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you look for for me",
+      "expected": "search",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "look for",
+      "expected": "search",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "look for please",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "search for quickly",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "search for please",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "search for right now",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please find text",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "find text right now",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please find text",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "locate quickly",
+      "expected": "search",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "locate right now",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you locate for me",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you look up for me",
+      "expected": "search",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "look up please",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "look up",
+      "expected": "search",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you seek for me",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey seek",
+      "expected": "search",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you seek",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "what is please",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you what is for me",
+      "expected": "search",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "what is right now",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "what are please",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "what are for me",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you what are for me",
+      "expected": "search",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "who is",
+      "expected": "search",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey who is",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "who is right now",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you who are for me",
+      "expected": "search",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "who are right now",
+      "expected": "search",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "who are",
+      "expected": "search",
+      "min_confidence": 0.85
+    }
+  ],
+  "find and replace": [
+    {
+      "input": "can you find and replace",
+      "expected": "find and replace",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "find and replace right now",
+      "expected": "find and replace",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please find and replace",
+      "expected": "find and replace",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "replace text quickly",
+      "expected": "find and replace",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "replace text",
+      "expected": "find and replace",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "replace text right now",
+      "expected": "find and replace",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "find replace",
+      "expected": "find and replace",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "find replace for me",
+      "expected": "find and replace",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you find replace",
+      "expected": "find and replace",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you search and replace",
+      "expected": "find and replace",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey search and replace",
+      "expected": "find and replace",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please search and replace",
+      "expected": "find and replace",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please substitute text",
+      "expected": "find and replace",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey substitute text",
+      "expected": "find and replace",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "substitute text please",
+      "expected": "find and replace",
+      "min_confidence": 0.7
+    }
+  ],
+  "click": [
+    {
+      "input": "click quickly",
+      "expected": "click",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "please click",
+      "expected": "click",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey click",
+      "expected": "click",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey press",
+      "expected": "click",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "press",
+      "expected": "click",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "press right now",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you hit",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please hit",
+      "expected": "click",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey hit",
+      "expected": "click",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "tap",
+      "expected": "click",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "tap please",
+      "expected": "click",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you tap",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please press button",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey please press button",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you press button for me",
+      "expected": "click",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please click button",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "click button please",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey click button",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you press key",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "press key right now",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey press key",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please hit key",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you hit key for me",
+      "expected": "click",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hit key please",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you press enter",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "press enter right now",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "press enter",
+      "expected": "click",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you press escape for me",
+      "expected": "click",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you press escape",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "press escape",
+      "expected": "click",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey press shift",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you press shift",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "press shift",
+      "expected": "click",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "press control please",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you press control",
+      "expected": "click",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you press control for me",
+      "expected": "click",
+      "min_confidence": 0.6
+    }
+  ],
+  "type": [
+    {
+      "input": "hey type",
+      "expected": "type",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "type right now",
+      "expected": "type",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you type",
+      "expected": "type",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you write for me",
+      "expected": "type",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "write",
+      "expected": "type",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "write please",
+      "expected": "type",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "enter text right now",
+      "expected": "type",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please enter text",
+      "expected": "type",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "enter text",
+      "expected": "type",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you input text",
+      "expected": "type",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "input text",
+      "expected": "type",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you input text for me",
+      "expected": "type",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you type text for me",
+      "expected": "type",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey type text",
+      "expected": "type",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please type text",
+      "expected": "type",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you write text",
+      "expected": "type",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "write text please",
+      "expected": "type",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey write text",
+      "expected": "type",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey insert text",
+      "expected": "type",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you insert text for me",
+      "expected": "type",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please insert text",
+      "expected": "type",
+      "min_confidence": 0.7
+    }
+  ],
+  "screenshot": [
+    {
+      "input": "screenshot right now",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you screenshot for me",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey screenshot",
+      "expected": "screenshot",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you screen capture",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "screen capture",
+      "expected": "screenshot",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "screen capture please",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "capture screen right now",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "capture screen please",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you capture screen",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "take screenshot please",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "take screenshot",
+      "expected": "screenshot",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you take screenshot",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please snap screen",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you snap screen",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey snap screen",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey print screen",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "print screen",
+      "expected": "screenshot",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "could you print screen for me",
+      "expected": "screenshot",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey please screen shot",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please screen shot",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "screen shot",
+      "expected": "screenshot",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "hey please capture window",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you capture window",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "capture window right now",
+      "expected": "screenshot",
+      "min_confidence": 0.7
+    }
+  ],
+  "code": [
+    {
+      "input": "can you write code for me",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you write code for me for me",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "write code for me",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "generate code for this please",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please generate code for this",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you generate code for this",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "please create a program",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "create a program",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you create a program",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "build a script right now",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you build a script",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "would you build a script",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "develop an application for me",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please develop an application",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "develop an application please",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "make a function please",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "make a function quickly",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey make a function",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey write a function for me",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "write a function for me",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you write a function for me for me",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "create a function that right now",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you create a function that",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "create a function that please",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you write an article on for me",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you write an article on",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "would you write an article on",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you write an article about programming",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "write an article about programming right now",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "write an article about programming quickly",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "hey explain how to code",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "explain how to code right now",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "explain how to code for me",
+      "expected": "code",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "could you explain this code",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey explain this code",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you explain this code",
+      "expected": "code",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "write me an article on web development",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "build a program that web development",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "create a function to web development",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "generate code for web development",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "write a script that web development",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "write me an article on sorting an array",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "build a program that sorting an array",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "create a function to sorting an array",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "generate code for sorting an array",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "write a script that sorting an array",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "write me an article on user authentication",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "build a program that user authentication",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "create a function to user authentication",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "generate code for user authentication",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "write a script that user authentication",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "write me an article on file handling",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "build a program that file handling",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "create a function to file handling",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "generate code for file handling",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "write a script that file handling",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "write me an article on data validation",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "build a program that data validation",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "create a function to data validation",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "generate code for data validation",
+      "expected": "code",
+      "min_confidence": 0.8
+    },
+    {
+      "input": "write a script that data validation",
+      "expected": "code",
+      "min_confidence": 0.8
+    }
+  ],
+  "help": [
+    {
+      "input": "can you help",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "help please",
+      "expected": "help",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "help right now",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "assist right now",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "assist for me",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you assist for me",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you support for me",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "support please",
+      "expected": "help",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "can you support",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you help me",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please help me",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you help me for me",
+      "expected": "help",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "need help right now",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you need help for me",
+      "expected": "help",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you need help",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you assistance for me",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey assistance",
+      "expected": "help",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "assistance right now",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "guide me",
+      "expected": "help",
+      "min_confidence": 0.85
+    },
+    {
+      "input": "guide me right now",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey guide me",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "could you show help for me",
+      "expected": "help",
+      "min_confidence": 0.6
+    },
+    {
+      "input": "can you show help",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "hey show help",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "get help for me",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "please get help",
+      "expected": "help",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "can you get help",
+      "expected": "help",
+      "min_confidence": 0.7
+    }
+  ],
+  "ambiguous": [
+    {
+      "input": "open",
+      "expected": "open",
+      "should_be_ambiguous": true
+    },
+    {
+      "input": "close",
+      "expected": "close",
+      "should_be_ambiguous": true
+    },
+    {
+      "input": "copy",
+      "expected": "copy",
+      "should_be_ambiguous": true
+    },
+    {
+      "input": "paste",
+      "expected": "paste",
+      "should_be_ambiguous": true
+    },
+    {
+      "input": "cut",
+      "expected": "cut",
+      "should_be_ambiguous": true
+    },
+    {
+      "input": "delete",
+      "expected": "delete",
+      "should_be_ambiguous": true
+    },
+    {
+      "input": "save",
+      "expected": "save",
+      "should_be_ambiguous": true
+    },
+    {
+      "input": "save as",
+      "expected": "save as",
+      "should_be_ambiguous": true
+    },
+    {
+      "input": "undo",
+      "expected": "undo",
+      "should_be_ambiguous": true
+    },
+    {
+      "input": "redo",
+      "expected": "redo",
+      "should_be_ambiguous": true
+    }
+  ]
+}

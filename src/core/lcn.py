@@ -1,10 +1,11 @@
 from dataclasses import dataclass
 from sentence_transformers import SentenceTransformer
-from typing import Optional
+from typing import Optional, Tuple
 import numpy as np
 import logging
 import pickle
 from pathlib import Path
+import atexit
 
 
 from configs.fillers import FILLERS
@@ -62,68 +63,120 @@ class IntentResult:
 class LCN:
     """
     Linguistic Command Normalizer.
-    Converts natural language into structured commands:
-      - intent (open, copy, volume up, etc.)
-      - parameters (numbers, directions, targets)
-      - confidence score with breakdown
+    Converts natural language into structured commands using:
+      - sentence-transformers for semantic understanding
+      - spaCy for linguistic analysis
+      - rapidfuzz for lexical matching
     """
 
     # Configuration constants
-    SEMANTIC_WEIGHT = 0.6
-    LEXICAL_WEIGHT = 0.3
-    OVERLAP_BOOST_MAX = 0.2
-    CONFIDENCE_THRESHOLD = 0.62
+    SEMANTIC_WEIGHT = 0.8
+    LEXICAL_WEIGHT = 0.2
+    OVERLAP_BOOST_MAX = 0.05
+    CONFIDENCE_THRESHOLD = 0.75
     PARAM_BOOST_MULTIPLIER = 1.1
     HIGH_CONFIDENCE_THRESHOLD = 0.85
     AMBIGUITY_THRESHOLD = 0.1
+    
+    CACHE_DIR = Path("cache")
 
-    def __init__(self) -> None:
+    #TODO: move th constants in a config file and make them configurable
+    def __init__(self, model: str = 'all-MiniLM-L6-v2') -> None:
         logger.info('LCN initializing...')
         
-        self.nlp = self._load_model("en_core_web_lg")
+        # spaCy for NLP tasks (POS tagging, NER, cleaning)
+        self.nlp = self._load_spacy_model("en_core_web_lg")
         logger.debug('spaCy model loaded')
+        self.EMBEDDING_MODEL_NAME = model
 
-        self.embedding_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
-        logger.debug('SentenceTransformer model loaded')
+        # sentence-transformers for semantic embeddings
+        self.embedding_model = self._load_embedding_model(self.EMBEDDING_MODEL_NAME)
+        logger.debug(f'SentenceTransformer model loaded: {self.EMBEDDING_MODEL_NAME}')
 
-        # Preload cleaned intent docs for similarity matching
+        # Setup embedding cache
+        self._setup_cache()
+
+        # Precompute intent embeddings (done once at startup)
         self.intent_embeddings = self._precompute_intent_embeddings()
-        logger.debug(f'Generated intent docs for {len(self.intent_embeddings)} intents')
+        logger.debug(f'Precomputed embeddings for {len(self.intent_embeddings)} intents')
         
-        # Store raw intent phrases for fuzzy matching
+        # Store cleaned phrases for fuzzy matching
         self.intent_phrases = self._generate_intent_phrases()
         logger.debug(f'Generated intent phrases for {len(self.intent_phrases)} intents')
 
-        # Create a persistent entity ruler ONCE
+        # Create entity ruler for parameter extraction
         if "entity_ruler" not in self.nlp.pipe_names:
             self.entity_ruler = self.nlp.add_pipe("entity_ruler", before="ner")
             self.entity_ruler.add_patterns(params_pattern)
             logger.debug('Entity ruler added to pipeline')
 
-        cache_file = Path("cache/embeddings.pkl")
-
-        # Load cache
-        if cache_file.exists():
-            with open(cache_file, "rb") as f:
-                self.embedding_cache = pickle.load(f)
-        else:
-            self.embedding_cache = {}
+        # Register cleanup on exit
+        atexit.register(self._save_cache)
 
         logger.info(f'LCN initialized | rapidfuzz={HAS_RAPIDFUZZ}')
+
+    # ---------------------------------------------------------
+    # MODEL LOADING
+    # ---------------------------------------------------------
+    def _load_spacy_model(self, model_name: str):
+        """Load spaCy model (used for NLP tasks, not embeddings)"""
+        try:
+            import spacy
+            nlp = spacy.load(model_name)
+            logger.debug(f"Loaded spaCy model: {model_name}")
+            return nlp
+        except OSError:
+            logger.info(f"Model {model_name} not found, downloading...")
+            import spacy.cli
+            spacy.cli.download(model_name)
+            return spacy.load(model_name)
+
+    def _load_embedding_model(self, model_name: str):
+        """Load sentence-transformers model for semantic embeddings"""
+        try:
+            model = SentenceTransformer(model_name)
+            logger.info(f"Loaded embedding model: {model_name}")
+            return model
+        except Exception as e:
+            logger.error(f"Failed to load embedding model: {e}")
+            raise
+
+    # ---------------------------------------------------------
+    # CACHE MANAGEMENT
+    # ---------------------------------------------------------
+    def _setup_cache(self):
+        """Setup embedding cache for query vectors"""
+        # Create cache directory
+        self.CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        self.cache_file = self.CACHE_DIR / "query_embeddings.pkl"
+        
+        # Load existing cache
+        if self.cache_file.exists():
+            try:
+                with open(self.cache_file, "rb") as f:
+                    self.embedding_cache = pickle.load(f)
+                logger.info(f"Loaded embedding cache: {len(self.embedding_cache)} entries")
+            except Exception as e:
+                logger.warning(f"Failed to load cache: {e}, starting fresh")
+                self.embedding_cache = {}
+        else:
+            self.embedding_cache = {}
+            logger.debug("Starting with empty embedding cache")
+
+    def _save_cache(self):
+        """Save embedding cache to disk"""
+        try:
+            with open(self.cache_file, "wb") as f:
+                pickle.dump(self.embedding_cache, f)
+            logger.info(f"Saved embedding cache: {len(self.embedding_cache)} entries")
+        except Exception as e:
+            logger.error(f"Failed to save cache: {e}")
 
     # ---------------------------------------------------------
     # PREPROCESSING
     # ---------------------------------------------------------
     def preprocess(self, text: str) -> str:
-        """
-        Lowercase and remove filler words.
-        
-        Args:
-            text: Raw user input
-            
-        Returns:
-            Preprocessed text with fillers removed
-        """
+        """Lowercase and remove filler words"""
         text = text.lower().strip()
 
         # Remove fillers in the middle
@@ -144,22 +197,10 @@ class LCN:
     # CLEAN COMMAND
     # ---------------------------------------------------------
     def clean_command(self, text: str) -> str:
-        """
-        Remove filler tokens and keep only action-relevant tokens.
-        Uses spaCy's linguistic features for context preservation.
-        
-        Args:
-            text: Preprocessed text
-            
-        Returns:
-            Cleaned text with only relevant tokens
-        """
+        """Remove filler tokens, keep action-relevant tokens using spaCy"""
         doc = self.nlp(text)
 
-        # POS tags to keep
         keep_pos = {"VERB", "NOUN", "NUM", "ADV", "PROPN", "ADJ"}
-        
-        # Important prepositions for directional commands
         directional_preps = {"up", "down", "to", "in", "on", "off", "out"}
         
         cleaned = []
@@ -167,24 +208,18 @@ class LCN:
         for tok in doc:
             if tok.is_space or tok.is_punct:
                 continue
-
             if tok.text.lower() in FILLERS:
                 continue
-
-            # Keep important prepositions
             if tok.pos_ == "ADP" and tok.text.lower() in directional_preps:
                 cleaned.append(tok.text.lower())
                 continue
-            
-            # Keep particle verbs (e.g., "shut down")
             if tok.dep_ == "prt":
                 cleaned.append(tok.lemma_)
                 continue
-            
             if tok.pos_ in keep_pos:
                 cleaned.append(tok.lemma_)
 
-        # Remove only consecutive duplicates (preserve order)
+        # Remove consecutive duplicates
         result = []
         for word in cleaned:
             if not result or result[-1] != word:
@@ -193,13 +228,17 @@ class LCN:
         return " ".join(result)
 
     # ---------------------------------------------------------
-    # INTENT DOC GENERATION
+    # INTENT EMBEDDING GENERATION
     # ---------------------------------------------------------
-    def _precompute_intent_embeddings(self):
-        """Precompute embeddings for all intents in batch"""
+    def _precompute_intent_embeddings(self) -> dict[str, Tuple[list[str], np.ndarray]]:
+        """
+        Precompute embeddings for all intent phrases.
+        Returns dict mapping intent -> (phrases, embeddings)
+        """
         intent_map = {}
         
         for intent, phrases in INTENTS.items():
+            # Clean all phrases
             cleaned_phrases = []
             for phrase in phrases:
                 processed = self.preprocess(phrase)
@@ -207,90 +246,100 @@ class LCN:
                 if cleaned:
                     cleaned_phrases.append(cleaned)
             
+            if not cleaned_phrases:
+                logger.warning(f"No valid phrases for intent: {intent}")
+                continue
+            
             # Batch encode all phrases for this intent
-            if cleaned_phrases:
-                embeddings = self.embedding_model.encode(
-                    cleaned_phrases,
-                    convert_to_numpy=True,
-                    show_progress_bar=False
-                )
-                intent_map[intent] = (cleaned_phrases, embeddings)
+            logger.debug(f"Encoding {len(cleaned_phrases)} phrases for intent: {intent}")
+            embeddings = self.embedding_model.encode(
+                cleaned_phrases,
+                convert_to_numpy=True,
+                show_progress_bar=False,
+                batch_size=32
+            )
+            
+            intent_map[intent] = (cleaned_phrases, embeddings)
+            logger.debug(f"Intent '{intent}': {len(cleaned_phrases)} phrases, embedding shape: {embeddings.shape}")
         
         return intent_map
     
     def _generate_intent_phrases(self) -> dict[str, list[str]]:
-        """
-        Store cleaned string versions of intent phrases for fuzzy matching.
-        
-        Returns:
-            Dict mapping intent names to lists of cleaned phrase strings
-        """
-        intent_phrases = {}
-        
-        for intent, phrases in INTENTS.items():
-            cleaned_phrases = []
-            for phrase in phrases:
-                processed = self.preprocess(phrase)
-                cleaned = self.clean_command(processed)
-                if cleaned:
-                    cleaned_phrases.append(cleaned)
-            
-            intent_phrases[intent] = cleaned_phrases
-        
-        return intent_phrases
+        """Extract just the phrases from intent_embeddings for fuzzy matching"""
+        return {
+            intent: phrases 
+            for intent, (phrases, _) in self.intent_embeddings.items()
+        }
 
     # ---------------------------------------------------------
-    # CACHED SIMILARITY COMPUTATION
+    # VECTOR COMPUTATION
     # ---------------------------------------------------------
-    def _vector(self, text: str):
-        if text in self.embedding_cache:
-            return self.embedding_cache[text]
-        
-        embedding = self.embedding_model.encode(text)
-        self.embedding_cache[text] = embedding
-        return embedding
-
-    def _sim(self, doc_vec, query_vec):
+    def _get_query_embedding(self, text: str) -> np.ndarray:
         """
-        Fast cosine similarity with zero-vector handling.
+        Get embedding for query text with caching.
         
         Args:
-            doc_vec: Document vector
-            query_vec: Query vector
+            text: Cleaned query text
             
         Returns:
-            Cosine similarity score (0-1)
+            Embedding vector (numpy array)
         """
-        if not doc_vec.any() or not query_vec.any():
+        # Check cache first TODO: uncomment them after testing
+        # if text in self.embedding_cache:
+        #     return self.embedding_cache[text]
+        
+        # Compute embedding
+        embedding = self.embedding_model.encode(
+            text,
+            convert_to_numpy=True,
+            show_progress_bar=False
+        )
+        
+        # Cache it
+        self.embedding_cache[text] = embedding
+        
+        # Periodically save cache (every 100 new entries)
+        if len(self.embedding_cache) % 100 == 0:
+            self._save_cache()
+        
+        return embedding
+
+    def _cosine_similarity(self, vec1: np.ndarray, vec2: np.ndarray) -> float:
+        """
+        Compute cosine similarity between two vectors.
+        
+        Args:
+            vec1: First vector
+            vec2: Second vector
+            
+        Returns:
+            Similarity score (0-1)
+        """
+        # Handle zero vectors
+        if not vec1.any() or not vec2.any():
             return 0.0
         
-        norm_product = np.linalg.norm(doc_vec) * np.linalg.norm(query_vec)
+        # Compute norms
+        norm_product = np.linalg.norm(vec1) * np.linalg.norm(vec2)
         if norm_product == 0:
             return 0.0
-            
-        return float(np.dot(doc_vec, query_vec) / norm_product)
+        
+        # Cosine similarity
+        return float(np.dot(vec1, vec2) / norm_product)
 
     # ---------------------------------------------------------
     # QUESTION PATTERN DETECTION
     # ---------------------------------------------------------
     def _is_question_pattern(self, text: str) -> bool:
-        """
-        Detect if text is a question pattern using multiple signals.
-        
-        Args:
-            text: Preprocessed text
-            
-        Returns:
-            True if text appears to be a question/search query
-        """
+        """Detect if text is a question using multiple signals"""
         text_lower = text.lower().strip()
         
-        # Check for question mark
+        # Question mark
         if text_lower.endswith("?"):
             logger.debug("Question detected: ends with '?'")
             return True
         
-        # Common question starters
+        # Question starters
         question_starters = [
             "what is", "what are", "what's", "whats",
             "who is", "who are", "who's", "whos",
@@ -307,43 +356,32 @@ class LCN:
                 logger.debug(f"Question detected: starts with '{starter}'")
                 return True
         
-        # Check first 2 words for question words
+        # Question words in first 2 words
         words = text_lower.split()[:2]
         question_words = {"what", "who", "when", "where", "why", "how", "is", "are", "can", "could"}
         if any(word in question_words for word in words):
-            logger.debug(f"Question detected: contains question word in first 2 words")
+            logger.debug(f"Question detected: question word in first 2 words")
             return True
         
         return False
 
     # ---------------------------------------------------------
-    # INTENT MATCHING WITH HYBRID APPROACH
+    # INTENT MATCHING
     # ---------------------------------------------------------
     def get_intent(self, text: str) -> IntentResult:
         """
         Match user input to an intent using hybrid approach:
-        1. Question pattern detection (rule-based)
-        2. Semantic similarity (spaCy vectors)
+        1. Rule-based question detection
+        2. Semantic similarity (sentence-transformers)
         3. Lexical similarity (fuzzy matching)
         4. Keyword overlap boosting
-        
-        Args:
-            text: Raw user input
-            
-        Returns:
-            IntentResult with intent, confidence, and scoring details
         """
         # Handle empty input
         if not text or not text.strip():
             logger.warning("Empty text input received")
             return IntentResult(
-                intent="unknown",
-                cleaned_text="",
-                params={},
-                confidence=0.0,
-                semantic_score=0.0,
-                lexical_score=0.0,
-                overlap_boost=1.0
+                intent="unknown", cleaned_text="", params={},
+                confidence=0.0, semantic_score=0.0, lexical_score=0.0, overlap_boost=1.0
             )
 
         logger.debug(f"Processing input: '{text}'")
@@ -352,17 +390,12 @@ class LCN:
         processed = self.preprocess(text)
         logger.debug(f"After preprocessing: '{processed}'")
         
-        # Rule-based: Check for question patterns
+        # Rule-based: Question detection
         if self._is_question_pattern(processed):
             logger.info(f"Question pattern detected: '{text}' -> search")
             return IntentResult(
-                intent="search",
-                cleaned_text=processed,
-                params={},
-                confidence=0.95,
-                semantic_score=0.0,
-                lexical_score=0.0,
-                overlap_boost=1.0
+                intent="search", cleaned_text=processed, params={},
+                confidence=0.95, semantic_score=0.0, lexical_score=0.0, overlap_boost=1.0
             )
         
         # Clean for semantic matching
@@ -372,88 +405,70 @@ class LCN:
         if not cleaned:
             logger.warning(f"Empty text after cleaning: '{text}'")
             return IntentResult(
-                intent="unknown",
-                cleaned_text="",
-                params={},
-                confidence=0.0,
-                semantic_score=0.0,
-                lexical_score=0.0,
-                overlap_boost=1.0
+                intent="unknown", cleaned_text="", params={},
+                confidence=0.0, semantic_score=0.0, lexical_score=0.0, overlap_boost=1.0
             )
         
-        # Semantic matching
-        query_vec = self._vector(cleaned)
+        # Get query embedding
+        query_embedding = self._get_query_embedding(cleaned) 
         query_words = set(cleaned.split())
         
-        # Track all matches for finding second-best
-        all_scores = []  # List of (intent, combined_score, sem, lex, boost)
+        # Track all matches
+        all_scores = []  # (intent, combined_score, sem, lex, boost)
         
-        for intent, docs in self.intent_embeddings.items():
-            intent_phrases = self.intent_phrases.get(intent, [])
-            
-            for i, doc in enumerate(docs):
+        # Compare against all intent embeddings
+        for intent, (phrases, embeddings) in self.intent_embeddings.items():
+            for i, (phrase, phrase_embedding) in enumerate(zip(phrases, embeddings)):
                 # 1. Semantic similarity
-                sem_score = self._sim(doc.vector, query_vec)
+                sem_score = self._cosine_similarity(phrase_embedding, query_embedding)
                 
-                # 2. Lexical similarity (if rapidfuzz available)
+                # 2. Lexical similarity
                 lex_score = 0.0
-                if HAS_RAPIDFUZZ and i < len(intent_phrases):
-                    lex_score = fuzz.ratio(cleaned, intent_phrases[i]) / 100.0
+                if HAS_RAPIDFUZZ:
+                    lex_score = fuzz.ratio(cleaned, phrase) / 100.0
                 
                 # 3. Keyword overlap boost
-                intent_words = set(doc.text.split())
-                if query_words and intent_words:
-                    word_overlap = len(query_words & intent_words) / max(len(query_words), 1)
-                    overlap_boost = 1.0 + (self.OVERLAP_BOOST_MAX * word_overlap)
+                phrase_words = set(phrase.split())
+                if query_words and phrase_words:
+                    overlap = len(query_words & phrase_words) / max(len(query_words), 1)
+                    overlap_boost = 1.0 + (self.OVERLAP_BOOST_MAX * overlap)
                 else:
                     overlap_boost = 1.0
                 
-                # Combine scores with weights
+                # Combine scores
                 if HAS_RAPIDFUZZ:
-                    combined_score = (
+                    combined = (
                         self.SEMANTIC_WEIGHT * sem_score + 
                         self.LEXICAL_WEIGHT * lex_score
                     ) * overlap_boost
                 else:
-                    combined_score = sem_score * overlap_boost
+                    combined = sem_score * overlap_boost
                 
-                all_scores.append((intent, combined_score, sem_score, lex_score, overlap_boost))
+                all_scores.append((intent, combined, sem_score, lex_score, overlap_boost))
         
-        # Sort by score (descending)
+        # Sort by score
         all_scores.sort(key=lambda x: x[1], reverse=True)
         
         if not all_scores:
-            logger.error("No intent matches found (should not happen)")
+            logger.error("No intent matches found")
             return IntentResult(
-                intent="unknown",
-                cleaned_text=cleaned,
-                params={},
-                confidence=0.0,
-                semantic_score=0.0,
-                lexical_score=0.0,
-                overlap_boost=1.0
+                intent="unknown", cleaned_text=cleaned, params={},
+                confidence=0.0, semantic_score=0.0, lexical_score=0.0, overlap_boost=1.0
             )
         
         # Get best and second-best
         best_intent, best_score, best_sem, best_lex, best_boost = all_scores[0]
         second_best = all_scores[1] if len(all_scores) > 1 else None
         
-        # Apply confidence threshold
+        # Threshold check
         if best_score < self.CONFIDENCE_THRESHOLD:
             logger.warning(
-                f"Below threshold | input='{text}' | "
-                f"best={best_intent}({best_score:.3f}) | "
-                f"threshold={self.CONFIDENCE_THRESHOLD} | "
-                f"sem={best_sem:.3f} lex={best_lex:.3f} boost={best_boost:.2f}"
+                f"Below threshold | input='{text}' | best={best_intent}({best_score:.3f}) | "
+                f"threshold={self.CONFIDENCE_THRESHOLD} | sem={best_sem:.3f} lex={best_lex:.3f}"
             )
-            
             return IntentResult(
-                intent="unknown",
-                cleaned_text=cleaned,
-                params={},
-                confidence=0.0,
-                semantic_score=best_sem,
-                lexical_score=best_lex,
+                intent="unknown", cleaned_text=cleaned, params={},
+                confidence=0.0, semantic_score=best_sem, lexical_score=best_lex,
                 overlap_boost=best_boost,
                 second_best_intent=second_best[0] if second_best else None,
                 second_best_score=second_best[1] if second_best else None
@@ -461,30 +476,23 @@ class LCN:
         
         # Create result
         result = IntentResult(
-            intent=best_intent,
-            cleaned_text=cleaned,
-            params={},  # Will be filled by normalize()
-            confidence=best_score,
-            semantic_score=best_sem,
-            lexical_score=best_lex,
+            intent=best_intent, cleaned_text=cleaned, params={},
+            confidence=best_score, semantic_score=best_sem, lexical_score=best_lex,
             overlap_boost=best_boost,
             second_best_intent=second_best[0] if second_best else None,
             second_best_score=second_best[1] if second_best else None
         )
         
-        # Log based on match quality
+        # Log
         if result.is_ambiguous:
             logger.warning(
-                f"Ambiguous match | input='{text}' | "
-                f"best={best_intent}({best_score:.3f}) | "
-                f"second={result.second_best_intent}({result.second_best_score:.3f}) | "
-                f"diff={best_score - result.second_best_score:.3f}"
+                f"Ambiguous | input='{text}' | best={best_intent}({best_score:.3f}) | "
+                f"second={result.second_best_intent}({result.second_best_score:.3f})"
             )
         else:
             logger.info(
-                f"Intent matched | input='{text}' | "
-                f"intent={best_intent} | confidence={best_score:.3f} | "
-                f"quality={result.match_quality}"
+                f"Matched | input='{text}' | intent={best_intent} | "
+                f"confidence={best_score:.3f} | quality={result.match_quality}"
             )
         
         return result
@@ -493,27 +501,18 @@ class LCN:
     # PARAMETER EXTRACTION
     # ---------------------------------------------------------
     def extract_params(self, text: str) -> dict[str, str]:
-        """
-        Extract parameters using entity ruler and spaCy NER.
-        Normalized to lowercase keys for consistency.
-        
-        Args:
-            text: Raw user input
-            
-        Returns:
-            Dict of parameter_name -> value (lowercase keys)
-        """
+        """Extract parameters using spaCy NER and entity ruler"""
         text = self.preprocess(text)
         doc = self.nlp(text)
 
         params = {}
         
-        # Extract from entity ruler and NER (normalize to lowercase)
+        # Extract from NER (lowercase keys)
         for ent in doc.ents:
             key = ent.label_.lower()
             params[key] = ent.text
         
-        # Fallback: extract potential targets from noun chunks
+        # Fallback: noun chunks
         if "target" not in params and "app" not in params:
             noun_chunks = [chunk.text for chunk in doc.noun_chunks]
             if noun_chunks:
@@ -526,59 +525,23 @@ class LCN:
     # CONFIDENCE CALCULATION
     # ---------------------------------------------------------
     def _calculate_confidence(self, score: float, intent: str, params: dict) -> float:
-        """
-        Calculate overall confidence with parameter completeness boost.
-        
-        Args:
-            score: Base confidence score from intent matching
-            intent: Matched intent name
-            params: Extracted parameters
-            
-        Returns:
-            Adjusted confidence score (capped at 1.0)
-        """
+        """Boost confidence if expected parameters are found"""
         confidence = score
         
-        # Boost if we found expected parameters (lowercase keys)
         if intent in ["open", "close", "click"]:
             if params.get("target") or params.get("app"):
                 confidence = min(confidence * self.PARAM_BOOST_MULTIPLIER, 1.0)
-                logger.debug(f"Confidence boosted for {intent} with params")
+                logger.debug(f"Confidence boosted for {intent}")
         
         elif intent in ["volume up", "volume down"]:
             if params.get("amount"):
                 confidence = min(confidence * self.PARAM_BOOST_MULTIPLIER, 1.0)
-                logger.debug(f"Confidence boosted for {intent} with amount")
+                logger.debug(f"Confidence boosted for {intent}")
         
         return round(confidence, 3)
 
     # ---------------------------------------------------------
-    # MODEL LOADING
-    # ---------------------------------------------------------
-    def _load_model(self, model_name: str):
-        """
-        Load spaCy model and auto-download if missing.
-        
-        Args:
-            model_name: Name of spaCy model (e.g., "en_core_web_lg")
-            
-        Returns:
-            Loaded spaCy model
-        """
-        try:
-            import spacy
-            nlp = spacy.load(model_name)
-            logger.debug(f"Loaded spaCy model: {model_name}")
-            return nlp
-
-        except OSError:
-            logger.info(f"Model {model_name} not found, downloading...")
-            import spacy.cli
-            spacy.cli.download(model_name)
-            return spacy.load(model_name)
-
-    # ---------------------------------------------------------
-    # NORMALIZATION → final output
+    # MAIN API
     # ---------------------------------------------------------
     def normalize(self, text: str) -> IntentResult:
         """
@@ -595,20 +558,18 @@ class LCN:
         # Get intent
         result = self.get_intent(text)
         
-        # Return early for unknown or search
+        # Handle special cases
         if result.intent in ["unknown", "search"]:
             if result.intent == "search":
                 result.params = {"query": text}
             return result
         
-        # Extract parameters for other intents
+        # Extract parameters
         result.params = self.extract_params(text)
         
-        # Calculate final confidence with parameter boost
+        # Calculate final confidence
         result.confidence = self._calculate_confidence(
-            result.confidence,
-            result.intent,
-            result.params
+            result.confidence, result.intent, result.params
         )
         
         logger.info(

@@ -241,4 +241,5 @@ Thumbs.db
 __pypackages__/
 mic_list.csv
 mic_list.csv
+cache/
 

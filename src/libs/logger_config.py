@@ -26,7 +26,7 @@ def setup_logging(
     log_path.mkdir(exist_ok=True)
     
     # Get the root logger for your application
-    logger = logging.getLogger("desktop_assistant")
+    logger = logging.getLogger("tess")
     logger.setLevel(getattr(logging, log_level.upper()))
     
     # Remove existing handlers (in case setup_logging is called multiple times)
