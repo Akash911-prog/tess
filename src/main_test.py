@@ -3,7 +3,11 @@ import logging
 from core.lcn import LCN
 from core.state_manager import StateManager
 from core.stt import STT
+# from core.binary_classifier import Classifier
+from tests.binary_cl_test import BinaryClassifierTester
 from libs.logger_config import setup_logging
+from tests.lcn_test import LCNTester
+from tests.gen_test_cases import gen
 
 
 setup_logging(
@@ -20,6 +24,7 @@ class Main():
     def __init__(self) -> None:
 
         self.normalizer = LCN(model="MongoDB/mdbr-leaf-ir")
+        # self.classifier = Classifier()
         self.state_manager = StateManager()
         self.stt = STT(state_manager=self.state_manager)
         # self.indicator = self.stt.indicator
@@ -103,9 +108,34 @@ class Main():
             logger.info("idle")
         self.stt.close()
 
-    
+    def test(self) -> None:
+            tester = BinaryClassifierTester(
+                classifier=self.classifier,
+                test_cases_path='tests/data/binary_classifier_test_cases.json'
+            )
+            
+            # Run tests
+            results = tester.run_tests(threshold=0.65)
+            
+            # Print summary
+            tester.print_summary()
+            
+            # Save detailed results
+            tester.save_results('tests/results/binary_classifier_results.json')
 
+    def gen_tests(self) -> None:
+        gen()
+        
+    def test_lcn(self):
+        tester = LCNTester(self.normalizer)
+        tester.load_test_cases(r'src\tests\data\test_cases.json')
+        tester.run_tests()
+        tester.calculate_metrics()
+        tester.generate_report()
 
 if __name__ == "__main__":
     main = Main()
-    main.run()
+    # main.run()
+    # main.test()
+    # main.gen_tests()
+    main.test_lcn()

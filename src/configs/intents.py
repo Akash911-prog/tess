@@ -270,22 +270,6 @@ INTENTS = {
         "refresh browser", "reload browser"
     ],
 
-    # Search & Find
-    "search": [
-        "search", "find", "look for",
-        "search for", "find text",
-        "locate", "look up", "seek",
-        "what is", "what are", "who is",
-        "who are", "when is", "when was",
-        "where is", "where are", "how do",
-        "how does", "why is", "why are",
-        "tell me about", "show me", "give me",
-        "what's the", "who's the", "where's the",
-        "tell me the", "show the", "find out",
-        "look up the", "search the web",
-        "google", "search google", "search online"
-    ],
-
     "find and replace": [
         "find and replace", "replace text",
         "find replace", "search and replace",
@@ -315,60 +299,5 @@ INTENTS = {
         "take screenshot", "snap screen",
         "print screen", "screen shot",
         "capture window"
-    ],
-
-    # AI/Code Generation
-    "code": [
-        # Direct coding requests
-        "write code for me",
-        "generate code for this",
-        "create a program",
-        "build a script",
-        "develop an application",
-        "make a function",
-        "write a function for me",
-        "create a function that",
-
-        # Article / explanation style (important)
-        "write an article on",
-        "write an article about programming",
-        "explain how to code",
-        "explain this code",
-        "teach me how to program",
-        "show me how to build",
-
-        # Task-based requests
-        "build a program that",
-        "create a script that",
-        "make a program that",
-        "write a script to",
-        "generate a function to",
-
-        # Web / app specific
-        "build a web application",
-        "create a website",
-        "generate a login page",
-        "write backend code",
-        "write frontend code",
-
-        # AI-style phrasing
-        "can you write code",
-        "can you generate code",
-        "help me write code",
-        "i want to build a program",
-        "i need a script that",
-
-        # General dev intent
-        "program this for me",
-        "develop this feature",
-        "implement this logic"
-    ],
-
-    # Help
-    "help": [
-        "help", "assist", "support",
-        "help me", "need help",
-        "assistance", "guide me",
-        "show help", "get help"
-    ],
+    ]
 }

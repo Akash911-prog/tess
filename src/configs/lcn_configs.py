@@ -1,11 +1,12 @@
-# Construction via add_pipe with custom config
-transformer_configs = {
-    "model": {
-        "@architectures": "spacy-transformers.TransformerModel.v3",
-        "name": "bert-base-uncased",
-        "tokenizer_config": {"use_fast": True},
-        "transformer_config": {"output_attentions": True},
-        "mixed_precision": True,
-        "grad_scaler_config": {"init_scale": 32768}
-    }
-}
+from pathlib import Path
+
+SEMANTIC_WEIGHT = 0.7
+LEXICAL_WEIGHT = 0.2
+OVERLAP_BOOST_MAX = 0.05
+CONFIDENCE_THRESHOLD = 0.85
+PARAM_BOOST_MULTIPLIER = 1.1
+HIGH_CONFIDENCE_THRESHOLD = 0.85
+AMBIGUITY_THRESHOLD = 0.1
+MODEL_NAME = "MongoDB/mdbr-leaf-ir"
+SPACY_MODEL_NAME = "en_core_web_sm"
+CACHE_DIR = Path("cache")

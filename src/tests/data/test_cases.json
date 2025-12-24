@@ -4903,185 +4903,185 @@
       "min_confidence": 0.7
     }
   ],
-  "search": [
+  "llm": [
     {
       "input": "search please",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.85
     },
     {
       "input": "please search",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.85
     },
     {
       "input": "hey search",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.85
     },
     {
       "input": "please find",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.85
     },
     {
       "input": "find",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.85
     },
     {
       "input": "find please",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.85
     },
     {
       "input": "could you look for for me",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "look for",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.85
     },
     {
       "input": "look for please",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "search for quickly",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "search for please",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "search for right now",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "hey please find text",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "find text right now",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "please find text",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "locate quickly",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.85
     },
     {
       "input": "locate right now",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "could you locate for me",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "could you look up for me",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "look up please",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "look up",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.85
     },
     {
       "input": "could you seek for me",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "hey seek",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.85
     },
     {
       "input": "can you seek",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "what is please",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "could you what is for me",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "what is right now",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "what are please",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "what are for me",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "could you what are for me",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "who is",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.85
     },
     {
       "input": "hey who is",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "who is right now",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "could you who are for me",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "who are right now",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "who are",
-      "expected": "search",
+      "expected": "llm",
       "min_confidence": 0.85
     }
   ],
@@ -5576,307 +5576,307 @@
   "code": [
     {
       "input": "can you write code for me",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "could you write code for me for me",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "write code for me",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "generate code for this please",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "please generate code for this",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "can you generate code for this",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "please create a program",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "create a program",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "can you create a program",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "build a script right now",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "can you build a script",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "would you build a script",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "develop an application for me",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "please develop an application",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "develop an application please",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "make a function please",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "make a function quickly",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "hey make a function",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "hey write a function for me",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "write a function for me",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "could you write a function for me for me",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "create a function that right now",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "can you create a function that",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "create a function that please",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "could you write an article on for me",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "can you write an article on",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "would you write an article on",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "can you write an article about programming",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "write an article about programming right now",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "write an article about programming quickly",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "hey explain how to code",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "explain how to code right now",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "explain how to code for me",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.6
     },
     {
       "input": "could you explain this code",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "hey explain this code",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "can you explain this code",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.7
     },
     {
       "input": "write me an article on web development",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "build a program that web development",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "create a function to web development",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "generate code for web development",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "write a script that web development",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "write me an article on sorting an array",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "build a program that sorting an array",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "create a function to sorting an array",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "generate code for sorting an array",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "write a script that sorting an array",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "write me an article on user authentication",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "build a program that user authentication",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "create a function to user authentication",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "generate code for user authentication",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "write a script that user authentication",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "write me an article on file handling",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "build a program that file handling",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "create a function to file handling",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "generate code for file handling",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "write a script that file handling",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "write me an article on data validation",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "build a program that data validation",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "create a function to data validation",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "generate code for data validation",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     },
     {
       "input": "write a script that data validation",
-      "expected": "code",
+      "expected": "llm",
       "min_confidence": 0.8
     }
   ],
@@ -6012,8 +6012,18 @@
       "min_confidence": 0.7
     },
     {
-      "input": "can you get help",
-      "expected": "help",
+      "input": "I was feeling really sad yesterday",
+      "expected": "unknown",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "How are you?",
+      "expected": "llm",
+      "min_confidence": 0.7
+    },
+    {
+      "input": "what are you doing?",
+      "expected": "llm",
       "min_confidence": 0.7
     }
   ],

@@ -1,5 +1,6 @@
 import json
 import random
+from configs.intents import INTENTS
 
 # -------------------------------
 # Configuration
@@ -133,4 +134,18 @@ def add_ambiguous_cases(dataset):
 
 
 
+
+# -------------------------------
+# Main
+# -------------------------------
+
+def gen():
+
+    dataset = generate_tests_from_intents(INTENTS)
+
+    enrich_code_intent(dataset)
+    add_ambiguous_cases(dataset)
+
+    with open("tests/data/test_cases.json", "w") as f:
+        json.dump(dataset, f, indent=2)
 

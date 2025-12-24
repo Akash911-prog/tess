@@ -11,6 +11,19 @@ import atexit
 from configs.fillers import FILLERS
 from configs.intents import INTENTS
 from configs.patters import params_pattern
+from configs.lcn_configs import (
+    SEMANTIC_WEIGHT,
+    LEXICAL_WEIGHT,
+    OVERLAP_BOOST_MAX,
+    CONFIDENCE_THRESHOLD,
+    PARAM_BOOST_MULTIPLIER,
+    MODEL_NAME,
+    AMBIGUITY_THRESHOLD,
+    SPACY_MODEL_NAME,
+    CACHE_DIR
+)
+from libs.meta_request_detector import MetaRequestDetector
+from libs.question_detector import QuestionDetector
 
 try:
     from rapidfuzz import fuzz
@@ -20,7 +33,7 @@ except ImportError:
     logging.warning("rapidfuzz not installed. Install with 'pip install rapidfuzz' for better accuracy.")
 
 
-logger = logging.getLogger('tess.lcn')
+logger = logging.getLogger('tess.core.lcn')
 
 
 @dataclass
@@ -45,7 +58,7 @@ class IntentResult:
         """Check if intent matching was ambiguous (top 2 within 0.1)"""
         if not self.second_best_score:
             return False
-        return (self.confidence - self.second_best_score) < 0.1
+        return (self.confidence - self.second_best_score) < AMBIGUITY_THRESHOLD
     
     @property
     def match_quality(self) -> str:
@@ -69,29 +82,17 @@ class LCN:
       - rapidfuzz for lexical matching
     """
 
-    # Configuration constants
-    SEMANTIC_WEIGHT = 0.8
-    LEXICAL_WEIGHT = 0.2
-    OVERLAP_BOOST_MAX = 0.05
-    CONFIDENCE_THRESHOLD = 0.75
-    PARAM_BOOST_MULTIPLIER = 1.1
-    HIGH_CONFIDENCE_THRESHOLD = 0.85
-    AMBIGUITY_THRESHOLD = 0.1
-    
-    CACHE_DIR = Path("cache")
-
-    #TODO: move th constants in a config file and make them configurable
-    def __init__(self, model: str = 'all-MiniLM-L6-v2') -> None:
+    def __init__(self, model: str = MODEL_NAME) -> None:
         logger.info('LCN initializing...')
         
         # spaCy for NLP tasks (POS tagging, NER, cleaning)
-        self.nlp = self._load_spacy_model("en_core_web_lg")
+        self.nlp = self._load_spacy_model(SPACY_MODEL_NAME)
         logger.debug('spaCy model loaded')
-        self.EMBEDDING_MODEL_NAME = model
+        EMBEDDING_MODEL_NAME = model
 
         # sentence-transformers for semantic embeddings
-        self.embedding_model = self._load_embedding_model(self.EMBEDDING_MODEL_NAME)
-        logger.debug(f'SentenceTransformer model loaded: {self.EMBEDDING_MODEL_NAME}')
+        self.embedding_model = self._load_embedding_model(EMBEDDING_MODEL_NAME)
+        logger.debug(f'SentenceTransformer model loaded: {EMBEDDING_MODEL_NAME}')
 
         # Setup embedding cache
         self._setup_cache()
@@ -112,6 +113,9 @@ class LCN:
 
         # Register cleanup on exit
         atexit.register(self._save_cache)
+
+        self.questionDetector = QuestionDetector(self.nlp)
+        self.metaRequestDetector = MetaRequestDetector(self.nlp)
 
         logger.info(f'LCN initialized | rapidfuzz={HAS_RAPIDFUZZ}')
 
@@ -147,8 +151,8 @@ class LCN:
     def _setup_cache(self):
         """Setup embedding cache for query vectors"""
         # Create cache directory
-        self.CACHE_DIR.mkdir(parents=True, exist_ok=True)
-        self.cache_file = self.CACHE_DIR / "query_embeddings.pkl"
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        self.cache_file = CACHE_DIR / "query_embeddings.pkl"
         
         # Load existing cache
         if self.cache_file.exists():
@@ -175,7 +179,7 @@ class LCN:
     # ---------------------------------------------------------
     # PREPROCESSING
     # ---------------------------------------------------------
-    def preprocess(self, text: str) -> str:
+    def _preprocess(self, text: str) -> str:
         """Lowercase and remove filler words"""
         text = text.lower().strip()
 
@@ -196,7 +200,7 @@ class LCN:
     # ---------------------------------------------------------
     # CLEAN COMMAND
     # ---------------------------------------------------------
-    def clean_command(self, text: str) -> str:
+    def _clean_command(self, text: str) -> str:
         """Remove filler tokens, keep action-relevant tokens using spaCy"""
         doc = self.nlp(text)
 
@@ -241,8 +245,8 @@ class LCN:
             # Clean all phrases
             cleaned_phrases = []
             for phrase in phrases:
-                processed = self.preprocess(phrase)
-                cleaned = self.clean_command(processed)
+                processed = self._preprocess(phrase)
+                cleaned = self._clean_command(processed)
                 if cleaned:
                     cleaned_phrases.append(cleaned)
             
@@ -284,9 +288,9 @@ class LCN:
         Returns:
             Embedding vector (numpy array)
         """
-        # Check cache first TODO: uncomment them after testing
-        # if text in self.embedding_cache:
-        #     return self.embedding_cache[text]
+        # Check cache first
+        if text in self.embedding_cache:
+            return self.embedding_cache[text]
         
         # Compute embedding
         embedding = self.embedding_model.encode(
@@ -326,49 +330,11 @@ class LCN:
         
         # Cosine similarity
         return float(np.dot(vec1, vec2) / norm_product)
-
-    # ---------------------------------------------------------
-    # QUESTION PATTERN DETECTION
-    # ---------------------------------------------------------
-    def _is_question_pattern(self, text: str) -> bool:
-        """Detect if text is a question using multiple signals"""
-        text_lower = text.lower().strip()
-        
-        # Question mark
-        if text_lower.endswith("?"):
-            logger.debug("Question detected: ends with '?'")
-            return True
-        
-        # Question starters
-        question_starters = [
-            "what is", "what are", "what's", "whats",
-            "who is", "who are", "who's", "whos",
-            "when is", "when are", "when was", "when's",
-            "where is", "where are", "where's",
-            "how do", "how does", "how can", "how to",
-            "why is", "why are", "why does",
-            "tell me", "show me", "give me",
-            "find out", "look up", "search for"
-        ]
-        
-        for starter in question_starters:
-            if text_lower.startswith(starter):
-                logger.debug(f"Question detected: starts with '{starter}'")
-                return True
-        
-        # Question words in first 2 words
-        words = text_lower.split()[:2]
-        question_words = {"what", "who", "when", "where", "why", "how", "is", "are", "can", "could"}
-        if any(word in question_words for word in words):
-            logger.debug(f"Question detected: question word in first 2 words")
-            return True
-        
-        return False
-
+    
     # ---------------------------------------------------------
     # INTENT MATCHING
     # ---------------------------------------------------------
-    def get_intent(self, text: str) -> IntentResult:
+    def _get_intent(self, text: str) -> IntentResult:
         """
         Match user input to an intent using hybrid approach:
         1. Rule-based question detection
@@ -386,20 +352,27 @@ class LCN:
 
         logger.debug(f"Processing input: '{text}'")
         
-        # Preprocess
-        processed = self.preprocess(text)
-        logger.debug(f"After preprocessing: '{processed}'")
+        # _Preprocess
+        processed = self._preprocess(text)
+        logger.debug(f"After _preprocessing: '{processed}'")
         
         # Rule-based: Question detection
-        if self._is_question_pattern(processed):
-            logger.info(f"Question pattern detected: '{text}' -> search")
+        if self.questionDetector._is_question_pattern(processed):
+            logger.info(f"Question pattern detected: '{text}' -> non_executable")
             return IntentResult(
-                intent="search", cleaned_text=processed, params={},
+                intent="non_executable", cleaned_text=processed, params={},
+                confidence=0.95, semantic_score=0.0, lexical_score=0.0, overlap_boost=1.0
+            )
+
+        if self.metaRequestDetector.is_meta_request(processed):
+            logger.info(f"Meta request detected: '{text}' -> non_executable")
+            return IntentResult(
+                intent="non_executable", cleaned_text=processed, params={},
                 confidence=0.95, semantic_score=0.0, lexical_score=0.0, overlap_boost=1.0
             )
         
         # Clean for semantic matching
-        cleaned = self.clean_command(processed)
+        cleaned = self._clean_command(processed)
         logger.debug(f"After cleaning: '{cleaned}'")
         
         if not cleaned:
@@ -431,15 +404,15 @@ class LCN:
                 phrase_words = set(phrase.split())
                 if query_words and phrase_words:
                     overlap = len(query_words & phrase_words) / max(len(query_words), 1)
-                    overlap_boost = 1.0 + (self.OVERLAP_BOOST_MAX * overlap)
+                    overlap_boost = 1.0 + (OVERLAP_BOOST_MAX * overlap)
                 else:
                     overlap_boost = 1.0
                 
                 # Combine scores
                 if HAS_RAPIDFUZZ:
                     combined = (
-                        self.SEMANTIC_WEIGHT * sem_score + 
-                        self.LEXICAL_WEIGHT * lex_score
+                        SEMANTIC_WEIGHT * sem_score + 
+                        LEXICAL_WEIGHT * lex_score
                     ) * overlap_boost
                 else:
                     combined = sem_score * overlap_boost
@@ -461,10 +434,10 @@ class LCN:
         second_best = all_scores[1] if len(all_scores) > 1 else None
         
         # Threshold check
-        if best_score < self.CONFIDENCE_THRESHOLD:
+        if best_score < CONFIDENCE_THRESHOLD:
             logger.warning(
                 f"Below threshold | input='{text}' | best={best_intent}({best_score:.3f}) | "
-                f"threshold={self.CONFIDENCE_THRESHOLD} | sem={best_sem:.3f} lex={best_lex:.3f}"
+                f"threshold={CONFIDENCE_THRESHOLD} | sem={best_sem:.3f} lex={best_lex:.3f}"
             )
             return IntentResult(
                 intent="unknown", cleaned_text=cleaned, params={},
@@ -500,9 +473,9 @@ class LCN:
     # ---------------------------------------------------------
     # PARAMETER EXTRACTION
     # ---------------------------------------------------------
-    def extract_params(self, text: str) -> dict[str, str]:
+    def _extract_params(self, text: str) -> dict[str, str]:
         """Extract parameters using spaCy NER and entity ruler"""
-        text = self.preprocess(text)
+        text = self._preprocess(text)
         doc = self.nlp(text)
 
         params = {}
@@ -530,12 +503,12 @@ class LCN:
         
         if intent in ["open", "close", "click"]:
             if params.get("target") or params.get("app"):
-                confidence = min(confidence * self.PARAM_BOOST_MULTIPLIER, 1.0)
+                confidence = min(confidence * PARAM_BOOST_MULTIPLIER, 1.0)
                 logger.debug(f"Confidence boosted for {intent}")
         
         elif intent in ["volume up", "volume down"]:
             if params.get("amount"):
-                confidence = min(confidence * self.PARAM_BOOST_MULTIPLIER, 1.0)
+                confidence = min(confidence * PARAM_BOOST_MULTIPLIER, 1.0)
                 logger.debug(f"Confidence boosted for {intent}")
         
         return round(confidence, 3)
@@ -556,16 +529,16 @@ class LCN:
         logger.debug(f"normalize() called with: '{text}'")
         
         # Get intent
-        result = self.get_intent(text)
+        result = self._get_intent(text)
         
         # Handle special cases
-        if result.intent in ["unknown", "search"]:
-            if result.intent == "search":
+        if result.intent in ["unknown", "non_executable"]:
+            if result.intent == "non_executable":
                 result.params = {"query": text}
             return result
         
         # Extract parameters
-        result.params = self.extract_params(text)
+        result.params = self._extract_params(text)
         
         # Calculate final confidence
         result.confidence = self._calculate_confidence(
