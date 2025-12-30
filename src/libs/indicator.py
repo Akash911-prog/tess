@@ -1,8 +1,6 @@
 import tkinter as tk
 import time
 
-from core.state_manager import StateManager
-
 
 class Indicator(tk.Tk):
     def __init__(self, state_manager: StateManager, geometry: str | None = '20x20+1850+20') -> None:

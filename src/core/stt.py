@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
 from libs.indicator import Indicator
-from core.state_manager import StateManager
+from core.context_manager import StateManager
 from configs.stt import ACCESS_KEY, KEYWORD_PATH, FORMAT, html_url
 
 class STT():

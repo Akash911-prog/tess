@@ -1,13 +1,17 @@
 import logging
+from pathlib import Path
 
 from core.lcn import LCN
-from core.state_manager import StateManager
-from core.stt import STT
+# from core.stt import STT
 # from core.binary_classifier import Classifier
 from tests.binary_cl_test import BinaryClassifierTester
 from libs.logger_config import setup_logging
 from tests.lcn_test import LCNTester
 from tests.gen_test_cases import gen
+# Use a pipeline as a high-level helper
+from transformers import pipeline
+from llama_cpp import Llama
+
 
 
 setup_logging(
@@ -18,15 +22,17 @@ setup_logging(
 )
 
 logger = logging.getLogger('tess.main')
+current_path = Path(__file__).parent.parent
+model = current_path.rglob("qwen3-0.6b-q8_0.gguf").__next__().resolve()._str
 
 class Main():
 
     def __init__(self) -> None:
+        self.llm = pipeline("text-generation", model='HuggingFaceTB/SmolLM2-360M-Instruct')
+        # self.stt = STT()
 
-        self.normalizer = LCN(model="MongoDB/mdbr-leaf-ir")
+        # self.normalizer = LCN(model="MongoDB/mdbr-leaf-ir")
         # self.classifier = Classifier()
-        self.state_manager = StateManager()
-        self.stt = STT(state_manager=self.state_manager)
         # self.indicator = self.stt.indicator
 
     def _compare_lcn_results(self, old_tester, new_tester):
@@ -133,9 +139,22 @@ class Main():
         tester.calculate_metrics()
         tester.generate_report()
 
+    def doit(self):
+
+        self.messages = [
+            {'role': 'system', 'content': 'you are a serious and sarcastic assistant. respond in a sarcastic tone'},
+        ]
+
+        while True:
+            text = input("You: ")
+            self.messages.append({'role': 'user', 'content': text})
+            output = self.llm(self.messages)
+            print(output)
+            self.messages.append(output[0]['generated_text'][-1])
+
 if __name__ == "__main__":
     main = Main()
     # main.run()
     # main.test()
     # main.gen_tests()
-    main.test_lcn()
+    main.doit()

@@ -1,7 +1,7 @@
 import logging
 
 from core.lcn import LCN
-from core.state_manager import StateManager
+from core.context_manager import ContextManager, State
 from core.stt import STT
 from libs.logger_config import setup_logging
 
