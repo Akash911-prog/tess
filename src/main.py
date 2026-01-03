@@ -20,8 +20,8 @@ class Main():
     def __init__(self) -> None:
 
         self.normalizer = LCN(model="MongoDB/mdbr-leaf-ir")
-        self.state_manager = StateManager()
-        self.stt = STT(state_manager=self.state_manager)
+        self.context = ContextManager()
+        self.stt = STT(state_manager=self.context)
         # self.indicator = self.stt.indicator
 
     def _compare_lcn_results(self, old_tester, new_tester):
@@ -94,12 +94,12 @@ class Main():
         while text.lower() != "close":
             logger.info("ready")
             text = self.stt.start_listening()
-            self.state_manager.set('processing')
+            self.context.set_state(State.PROCESSING)
             logger.info(text)
             logger.info("processing")
             result = self.normalizer.normalize(text)
             logger.info(result)
-            self.state_manager.set('idle')
+            self.context.set_state(State.IDLE)
             logger.info("idle")
         self.stt.close()
 

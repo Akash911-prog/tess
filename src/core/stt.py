@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
 from libs.indicator import Indicator
-from core.context_manager import StateManager
+from core.context_manager import ContextManager, State
 from configs.stt import ACCESS_KEY, KEYWORD_PATH, FORMAT, html_url
 
 class STT():
@@ -20,7 +20,7 @@ class STT():
     """
 
     def __init__(self, **kwargs) -> None:
-        self.state : StateManager = kwargs.get("state_manager") #type: ignore
+        self.state : ContextManager = kwargs.get("state_manager") #type: ignore
         self.indicator = Indicator(self.state)
         self.running = True
 
@@ -81,7 +81,7 @@ class STT():
         start_btn = self.driver.find_element(By.ID, 'start')
         start_btn.click()
 
-        self.state.set("listening")
+        self.state.set_state(State.LISTENING)
 
         # Wait for the speech recognition to finish
         WebDriverWait(self.driver, 30).until(
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     new_current_dir = os.getcwd()
     print(f"New current working directory: {new_current_dir}")
     text = ''
-    stt = STT(state_manager=StateManager())
+    stt = STT(state_manager=ContextManager())
 
     while text.lower() != "close":
         text = stt.start_listening()

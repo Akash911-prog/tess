@@ -10,6 +10,7 @@ from dataclasses import dataclass, field
 import time
 import uuid
 from enum import Enum
+from typing import Dict, Any
 
 
 class State(Enum):
@@ -248,3 +249,38 @@ class SystemContext:
     fullscreen_app: str | None = None
     unsaved_work: bool = False
     critical_apps_open: bool = False
+
+
+@dataclass
+class Payload:
+    """
+    Represents the payload sent to the AI model.
+
+    This payload contains information about the user's query, session history,
+    command history, AI agent invocations, system state, and long-term memory.
+
+    Attributes:
+        user_query (str): The user's query
+        session (SessionContext): The current session
+        commands (CommandContext): The command history
+        agent (AgentContext): The AI agent invocation history
+        system (SystemContext): The current system and application state
+        long_term_memory (Dict[str, Any]): The long-term memory, used to store information
+            that should be preserved across sessions
+
+    Example:
+        >>> payload = Payload(
+        ...     user_query="what's the weather like?",
+        ...     session=SessionContext(),
+        ...     commands=CommandContext(),
+        ...     agent=AgentContext(),
+        ...     system=SystemContext(),
+        ...     long_term_memory={"user_name": "John"}
+        ... )
+    """
+    user_query: str
+    session: SessionContext
+    commands: CommandContext
+    agent: AgentContext
+    system: SystemContext
+    long_term_memory: Dict[str, Any] = field(default_factory=dict)

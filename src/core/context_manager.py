@@ -1,5 +1,5 @@
 from libs.response_format import (
-    CommandContext, AgentContext, SystemContext, SessionContext, State
+    CommandContext, AgentContext, SystemContext, SessionContext, State, Payload
 )
 import time
 
@@ -184,6 +184,28 @@ class ContextManager:
             'commands': self.commands.recent(n),
             'agent_invocations': self.agent.recent(n)
         }
+    
+    def build_payload(self, query: str) -> Payload:
+        """
+        Constructs a payload object for use with external services.
+
+        The payload object contains all relevant context information,
+        including session, command, agent, and system state.
+
+        Args:
+            query (str): The user query that triggered the payload construction.
+
+        Returns:
+            Payload: A payload object containing session, command, agent, and system state.
+        """
+        # Construct payload with all relevant context information
+        return Payload(
+            user_query=query,
+            session=self.session,
+            commands=self.commands,
+            agent=self.agent,
+            system=self.system
+        )
 
     def reset_session(self):
         """
